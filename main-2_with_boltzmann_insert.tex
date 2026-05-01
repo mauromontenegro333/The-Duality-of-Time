@@ -1,0 +1,1778 @@
+% The Duality of Time
+% APS/Physical Review D REVTeX 4.2 draft
+\documentclass[aps,prd,reprint,nofootinbib,superscriptaddress,longbibliography]{revtex4-2}
+
+\usepackage{amsmath,amssymb,bm,mathtools,amsthm}
+\usepackage{booktabs}
+\usepackage{dcolumn}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\mpl}{M_{\rm Pl}}
+\newcommand{\Tc}{T_{\rm c}}
+\newcommand{\Hc}{H_{\rm c}}
+\newcommand{\gt}{\tilde g}
+\newcommand{\cTIP}{{\cal C}_{\rm TIP}}
+\newcommand{\LCDM}{$\Lambda$CDM}
+\newcommand{\Mpc}{\,\mathrm{Mpc}}
+\newcommand{\kmsMpc}{\,\mathrm{km\,s^{-1}\,Mpc^{-1}}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+
+\title{The Duality of Time}
+
+\author{Mauro Alfonso Montenegro}
+\author{John Henderson Ph.D}
+\email{mauromontenegro333@gmail.com}
+\email{jhenderson@quest-science.org}
+\affiliation{}
+
+
+\date{\today}
+
+\begin{abstract}
+Late-time cosmic acceleration is normally encoded as a cosmological constant or as a dark-energy fluid in the proper time of matter observers.  This paper develops a narrower alternative: a covariant scalar clock field selects a preferred foliation, while matter clocks measure a constrained proper time whose lapse is tied to the foliation expansion.  The Einstein-frame sector is taken to contain radiation and dust with no independent dark-energy stress tensor and no Einstein-frame cosmological constant.  The Temporal Inertia Principle (TIP) then gives a clock-dressed Friedmann law in which a dust-like expansion in clock-field time can be read as accelerated in matter-clock time.  Three results are established.  First, a homogeneous lapse alone is only a time redefinition unless a physical clock field and a matter metric are specified.  Second, the constant-index dust branch is exactly degenerate at the background level with a constant-$w$ FLRW model, $w_{\rm eff}=-n/(1+n)$; background acceleration therefore proves only that an effective dark-energy description exists, not that an independent dark-energy substance is required.  Third, the rigid $n=1$ branch fails the CMB acoustic distance and can only be an analytic toy limit; a viable branch must transition to general relativity before recombination.  Published DESI DR2 BAO distance ratios, DESI dynamical-dark-energy summaries, and supernova age-bias corrected $w_0w_a$ summaries are collected as benchmark constraints for a future transition-branch likelihood; they motivate but do not validate the clock theory.  The result is a no-independent-dark-energy construction rather than a completed observational replacement of \LCDM.  Its decisive tests are perturbations, gravitational slip, growth and weak lensing, redshift drift, tensor propagation, and local preferred-frame bounds. 
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+The standard cosmological model is successful but asymmetric: directly observed quantities are measured by atomic clocks, photon trajectories, and standard rulers, whereas the component responsible for late-time acceleration is introduced as an additional smooth stress-energy source.  This paper asks a limited question.  Is an independent dark-energy fluid logically forced by observed acceleration, or can the same homogeneous phenomenon be represented by a covariant clock sector with no dark-energy stress tensor in the Einstein-frame equations?
+
+The answer developed here is a no-necessity result.  A clock sector can generate accelerated matter-clock expansion even when the Einstein-frame expansion is dust/radiation-like and $\Lambda_{\rm E}=0$.  This does not by itself prove that nature contains no dark energy.  It proves the more precise statement that background acceleration alone does not require an independent dark-energy substance.  The clock interpretation becomes physical only if it is tied to a covariant scalar field, one metric for matter and light, a constrained action, and non-background observables.
+
+The title ``Duality of Time'' refers to this operational split.  The scalar clock field $X(x)$ supplies a covariant ordering of cosmological hypersurfaces; the proper time $t$ read by matter clocks is the time in which redshifts, distances, and local clocks are operationally measured.  In a homogeneous universe the two are related by a lapse.  If that lapse were merely a coordinate choice, the theory would be empty.  The central purpose of the paper is therefore to state exactly what extra structure is required to make the lapse physical and to identify where the model can be falsified.
+
+Recent DESI DR2 BAO analyses provide the observational target.  DESI DR2 uses more than 14 million galaxies and quasars from the first three years of DESI operation and reports BAO distance ratios from $z_{\rm eff}=0.295$ to $2.330$ \cite{DESIDR2}.  Interpreted in flat \LCDM{}, the DESI-only BAO summary gives $\Omega_m=0.2975\pm0.0086$ and $h r_d=(101.54\pm0.73)\,\mathrm{Mpc}$, while comparison with the CMB gives a $2.3\sigma$ discrepancy.  Allowing a CPL effective equation of state, $w(a)=w_0+w_a(1-a)$, moves the DESI+CMB fit to the quadrant $w_0>-1$, $w_a<0$, with $w_0=-0.42\pm0.21$ and $w_a=-1.75\pm0.58$, preferred over \LCDM{} at $3.1\sigma$ \cite{DESIDR2}.  The DESI extended analysis finds that this low-redshift dynamical-dark-energy trend is stable under several parametrizations and non-parametric reconstructions, with a preferred crossing of the effective phantom divide near $z\sim0.5$ \cite{DESIExtended}.  Supernova age-bias analyses have also argued that correcting standardized SN Ia magnitudes for progenitor-age evolution shifts SN constraints back toward the DESI BAO+CMB solution and toward a present deceleration parameter consistent with zero or positive values \cite{Son2025}.  These results motivate alternatives to a fundamental dark-energy fluid, but they do not by themselves select a clock theory. 
+
+\section{Why a lapse is not enough}
+
+Consider the homogeneous line element
+\begin{equation}
+  \dd s^2=-N^2(\Tc)\dd\Tc^2+a^2(\Tc)\dd\Sigma_k^2 .
+  \label{eq:lapsemetric}
+\end{equation}
+If $N>0$ and monotonic, the change of variable
+\begin{equation}
+  \dd t=N(\Tc)\dd\Tc
+  \label{eq:timechange}
+\end{equation}
+turns Eq.~\eqref{eq:lapsemetric} into ordinary FLRW form,
+\begin{equation}
+  \dd s^2=-\dd t^2+a^2(t)\dd\Sigma_k^2 .
+\end{equation}
+Distances, redshifts, luminosities, and ages computed from this single physical metric depend on $H(t)$, not on whether the coordinate was called $\Tc$ or $t$.  A lapse-only argument is therefore a coordinate reparametrization.
+
+The repair is to introduce a scalar clock field $X(x)$ with timelike gradient
+\begin{equation}
+  Y_X\equiv -g^{\mu\nu}\nabla_\mu X\nabla_\nu X>0,
+\end{equation}
+whose level sets define a physical foliation.  The unit normal is
+\begin{equation}
+  u_\mu=-\frac{\nabla_\mu X}{\sqrt{Y_X}},\qquad u^\mu u_\mu=-1,
+\end{equation}
+and the foliation expansion is
+\begin{equation}
+  \theta\equiv \nabla_\mu u^\mu .
+\end{equation}
+Matter and radiation are assumed to couple universally to a physical metric $\gt_{\mu\nu}$.  For the homogeneous dark-energy problem considered here I set the disformal regulator to unity, so $\gt_{\mu\nu}=g_{\mu\nu}$.  A more general low-acceleration sector can be written as
+\begin{equation}
+  \gt_{\mu\nu}=\alpha^{-2}g_{\mu\nu}+(\alpha^{-2}-\alpha^2)u_\mu u_\nu,
+  \label{eq:physicalmetric}
+\end{equation}
+but that sector is not used for the claims of this paper.  Its inclusion would belong to a separate galaxy and lensing analysis.
+
+In unitary gauge $X=\Tc$, a flat FLRW geometry reads
+\begin{equation}
+  \dd s_E^2=-N^2(\Tc)\dd\Tc^2+a^2(\Tc)\dd\bm{x}^2,
+\end{equation}
+with
+\begin{equation}
+  \dd t=N\dd\Tc,
+  \qquad
+  H\equiv \frac{1}{a}\frac{\dd a}{\dd t},
+  \qquad
+  \Hc\equiv \frac{1}{a}\frac{\dd a}{\dd\Tc}=NH .
+  \label{eq:Hdefinitions}
+\end{equation}
+Here $t$ is matter-clock proper time; $\Tc$ is clock-field time.
+
+\section{Action and clock constraint}
+
+A minimal covariant realization is
+\begin{widetext}
+\begin{equation}
+  S=\frac{\mpl^2}{2}\int \dd^4x\sqrt{-g}(R-2\Lambda_{\rm E})
+  +\int \dd^4x\sqrt{-g}\,\lambda\cTIP
+  -\int \dd^4x\sqrt{-g}\left[\frac{Z_\chi}{2}g^{\mu\nu}\nabla_\mu\chi\nabla_\nu\chi+U(\chi,\theta)\right]
+  +S_m[\psi_m,\gt_{\mu\nu}],
+  \label{eq:action}
+\end{equation}
+\end{widetext}
+where $\lambda$ enforces the Temporal Inertia Principle,
+\begin{equation}
+  \cTIP\equiv N_\star\left(\frac{\theta}{3H_\star}\right)^{n(\chi)}u^\mu\nabla_\mu X-1=0 .
+  \label{eq:TIPcov}
+\end{equation}
+In unitary-gauge FLRW, $u^\mu\nabla_\mu X=1/N$ and $\theta=3H$, so
+\begin{equation}
+  N=N_\star\left(\frac{H}{H_\star}\right)^{n(\chi)} .
+  \label{eq:TIPlapse}
+\end{equation}
+The function $n(\chi)$ is the clock index.  Constant $n$ is analytically transparent but not viable back to recombination.  The transition field $\chi$ permits $n$ to be large only at late times and to approach zero at early times.
+
+The variational equations are as follows.  Variation with respect to $\lambda$ gives Eq.~\eqref{eq:TIPcov}.  Variation with respect to $g^{\mu\nu}$ gives
+\begin{equation}
+  \mpl^2 G_{\mu\nu}=T^{(m)}_{\mu\nu}+T^{(X,\lambda)}_{\mu\nu}+T^{(\chi)}_{\mu\nu},
+  \label{eq:Einstein}
+\end{equation}
+where
+\begin{align}
+  T^{(X,\lambda)}_{\mu\nu}&\equiv -\frac{2}{\sqrt{-g}}\frac{\delta}{\delta g^{\mu\nu}}
+  \int \dd^4x\sqrt{-g}\,\lambda\cTIP,\\
+  T^{(\chi)}_{\mu\nu}&=Z_\chi\nabla_\mu\chi\nabla_\nu\chi
+  -g_{\mu\nu}\left[\frac{Z_\chi}{2}(\nabla\chi)^2+U\right]
+  -2\frac{\partial U}{\partial\theta}\frac{\delta\theta}{\delta g^{\mu\nu}} .
+\end{align}
+The final term is written variationally because $\theta=\nabla_\mu u^\mu$ contains metric dependence through $u^\mu$ and the connection.  A fully explicit perturbation paper should reduce this to canonical scalar-tensor variables before implementing a Boltzmann code.
+
+Variation with respect to $X$ gives a clock-current equation
+\begin{equation}
+  \nabla_\mu J_X^\mu=0,
+  \label{eq:Xcurrent}
+\end{equation}
+where $J_X^\mu$ is obtained by differentiating the $X$ dependence of $u^\mu\nabla_\mu X$ and $\theta$.  The Bianchi identity applied to Eq.~\eqref{eq:Einstein}, together with matter conservation in the physical metric,
+\begin{equation}
+  \tilde\nabla_\mu \tilde T^{\mu\nu}_{(m)}=0,
+\end{equation}
+requires the clock and transition equations to be mutually consistent.  This is the covariant condition that prevents TIP from being an arbitrary time redefinition.
+
+The degree-of-freedom statement is deliberately conservative.  In the rigid limit, $Z_\chi\to0$ and the transition is auxiliary or attractor-constrained; the clock sector is constraint-like.  If $Z_\chi$ or clock stiffness is finite, an additional scalar mode is present and must satisfy ghost, gradient, fifth-force, and preferred-frame bounds.
+
+\section{No-independent-dark-energy background}
+
+Set $\Lambda_{\rm E}=0$ in Eq.~\eqref{eq:action}.  Assume that the Einstein-frame homogeneous expansion is sourced only by radiation and dust,
+\begin{equation}
+  \Hc^2=H_{\rm E0}^2 E_E^2(a),\qquad
+  E_E^2(a)=\Omega^E_{r0}a^{-4}+\Omega^E_{m0}a^{-3} .
+  \label{eq:EinsteinFrameFriedmann}
+\end{equation}
+From $\Hc=NH$ and Eq.~\eqref{eq:TIPlapse},
+\begin{equation}
+  H^{1+n(a)}=\frac{H_\star^{n(a)}}{N_\star}\Hc .
+\end{equation}
+Choosing $H_\star=H_0$ and $N_\star=H_{\rm E0}/H_0$ gives the normalized clock-dressed Friedmann law
+\begin{equation}
+  E(a)\equiv \frac{H(a)}{H_0}=\left[E_E(a)\right]^{1/[1+n(a)]} .
+  \label{eq:clockfriedmann}
+\end{equation}
+No dark-energy density appears in Eq.~\eqref{eq:EinsteinFrameFriedmann}.  Apparent acceleration can nevertheless appear in matter-clock time because matter observers infer kinematics from $H=(1/a)\dd a/\dd t$.
+
+For constant $n$ and dust only,
+\begin{equation}
+  E(z)=(1+z)^{3/[2(1+n)]},
+  \qquad
+  a(t)\propto t^{2(1+n)/3},
+  \label{eq:constn}
+\end{equation}
+with deceleration parameter
+\begin{equation}
+  q=-1-\frac{\dd\ln H}{\dd\ln a}=\frac{1-2n}{2(1+n)} .
+  \label{eq:qconstn}
+\end{equation}
+Therefore $n>1/2$ gives acceleration in matter-clock time, even though the Einstein-frame sector contains only dust and radiation.
+
+\subsection{Reciprocal clock scaling in the rigid branch}
+
+The original dual-time statement is recovered inside the covariant clock-field formulation using the same unitary-gauge clock coordinate used throughout this paper.  The scalar clock field is fixed by $X=\Tc$, where $\Tc$ is the clock-field foliation parameter.  The matter-clock time remains $t$, with
+\begin{equation}
+  \dd t=N(\Tc)\dd \Tc.
+\end{equation}
+In the rigid dust branch, the Einstein-frame solution in scalar-clock time is
+\begin{equation}
+  a(\Tc)\propto \Tc^{2/3},
+  \qquad
+  \Hc(\Tc)\equiv \frac{1}{a}\frac{\dd a}{\dd \Tc}
+  =\frac{2}{3\Tc} .
+  \label{eq:reciprocalEdS}
+\end{equation}
+For constant $n$, Eq.~\eqref{eq:TIPlapse} together with $\Hc=NH$ gives
+\begin{equation}
+  H^{1+n}\propto \Hc,
+  \qquad
+  H(\Tc)\propto \Tc^{-1/(1+n)} .
+  \label{eq:Hreciprocal}
+\end{equation}
+Thus the lapse is fixed rather than chosen independently:
+\begin{equation}
+  N(\Tc)=\frac{\Hc}{H}
+  \propto \Tc^{-n/(1+n)} .
+  \label{eq:Nreciprocal}
+\end{equation}
+Integrating the clock relation gives
+\begin{equation}
+  t\propto \Tc^{1/(1+n)},
+  \qquad
+  \Tc\propto t^{1+n} .
+  \label{eq:timeReciprocal}
+\end{equation}
+Substituting Eq.~\eqref{eq:timeReciprocal} into Eq.~\eqref{eq:reciprocalEdS} yields
+\begin{equation}
+  a(t)\propto t^{2(1+n)/3},
+  \label{eq:atReciprocal}
+\end{equation}
+which is the power-law branch in Eq.~\eqref{eq:constn}.  For the benchmark $n=1$ case,
+\begin{equation}
+  t\propto \Tc^{1/2},
+  \qquad
+  \Tc\propto t^2,
+  \qquad
+  a(t)\propto t^{4/3} .
+\end{equation}
+This is the compact reciprocal content of the dual-time idea: a decelerating dust solution in the scalar-clock foliation can be read as accelerated expansion by matter clocks because the clock conversion evolves dynamically.  As emphasized below, this rigid branch is an analytic demonstration only; the viable cosmology must transition back to the general-relativistic early-universe limit.
+
+\begin{theorem}[No-necessity of an independent dark-energy fluid]
+There exist covariant clock-field actions of the form Eq.~\eqref{eq:action}, with $\Lambda_{\rm E}=0$ and no independent dark-energy stress tensor, whose homogeneous matter-clock expansion accelerates for $n>1/2$ in the late-time dust branch.
+\end{theorem}
+The theorem is not an observational proof that nature contains no dark energy.  It is a logical and model-theoretic proof that background acceleration does not require an independent dark-energy substance.
+
+\section{Background degeneracy with effective dark energy}
+
+The same theorem that makes the model interesting also limits what can be claimed from backgrounds alone.
+
+\begin{theorem}[Background degeneracy]
+Suppose all homogeneous observables are computed from one physical FLRW metric,
+\begin{equation}
+  \dd\tilde s^2=-\dd t^2+a^2(t)\dd\Sigma_k^2,
+\end{equation}
+and suppose the clock field enters those observables only through $H(z)$.  Then background data alone cannot distinguish a preferred-clock interpretation from an effective FLRW equation of state.  For the constant-$n$ dust branch, the equivalent constant equation of state is
+\begin{equation}
+  w_{\rm eff}=-\frac{n}{1+n}.
+  \label{eq:weff}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:constn} gives $E(z)=(1+z)^{3/[2(1+n)]}$.  A flat FLRW model filled by a single constant-$w$ effective fluid gives $E_w(z)=(1+z)^{3(1+w)/2}$.  Equating powers yields Eq.~\eqref{eq:weff}.  The same logic extends to variable $n(a)$ by reconstructing a $w_{\rm eff}(z)$ from the resulting $H(z)$.
+\end{proof}
+
+This result must be explicit.  Luminosity distances, angular-diameter distances, lookback times, and background redshift drift constrain $H(z)$.  They do not by themselves prove that the source is a clock sector rather than a smooth dark-energy fluid.  The model becomes physically distinct only through its action-level constraints, perturbations, tensor propagation, local limits, and consistency relations among observables.
+
+
+\section{Empirical anchors from DESI DR2 and supernova age bias}
+
+The background theorems above show that acceleration can be represented without an independent Einstein-frame dark-energy fluid.  They do not show that the representation is observationally viable.  The numerical summaries in this section are imported from the three papers cited in the introduction.  They are not new likelihood calculations; they are paper-level constraints and distance summaries that define the empirical targets a viable transition clock model must reproduce before it can be treated as an alternative to \LCDM{} or to a phenomenological $w_0w_a$ fit.  Full posterior chains, covariance matrices, and nuisance-parameter likelihoods must still be used in a dedicated data paper.
+
+For a transition clock model with standard early physics, $n(a)\to0$ before recombination, the sound horizon $r_d$ can be treated with the same early-universe calibration used in ordinary BAO analyses.  Given a clock-dressed $E(z)=H(z)/H_0$, the background distances are
+\begin{align}
+D_M(z)&=\frac{c}{H_0}\int_0^z\frac{\dd z'}{E(z')},\nonumber\\
+D_H(z)&=\frac{c}{H_0E(z)},\nonumber\\
+D_V(z)&=\big[zD_M^2(z)D_H(z)\big]^{1/3}.
+\label{eq:bao_distances}
+\end{align}
+The predicted quantities to compare with DESI are therefore $D_M/r_d$, $D_H/r_d$, and $D_V/r_d$.  Table~\ref{tab:desi_bao_dr2} gives the direct DESI DR2 distance targets.  A future likelihood analysis should use the public DESI likelihood and covariance matrices; the table is included here to make the observable targets explicit.
+
+\begin{table*}[t]
+\footnotesize
+\caption{Direct DESI DR2 BAO summary distances used as benchmark targets.  The first seven rows are the DESI DR2 measurements used for cosmological inference in Ref.~\cite{DESIDR2}.  The last two rows are the separated LRG3 and ELG1 bins reported by DESI but superseded by the combined LRG3+ELG1 row for cosmological inference.  Here $r_{V,M/H}$ is the correlation coefficient between $D_V/r_d$ and $D_M/D_H$, while $r_{M,H}$ is the correlation coefficient between $D_M/r_d$ and $D_H/r_d$.}
+\begin{ruledtabular}
+\begin{tabular}{lccccccccc}
+Tracer & $z_{\rm eff}$ & $\alpha_{\rm iso}$ & $\alpha_{\rm AP}$ & $D_V/r_d$ & $D_M/D_H$ & $r_{V,M/H}$ & $D_M/r_d$ & $D_H/r_d$ & $r_{M,H}$ \\
+\hline
+BGS & 0.295 & $0.9857\pm0.0093$ & -- & $7.942\pm0.075$ & -- & -- & -- & -- & -- \\
+LRG1 & 0.510 & $0.9911\pm0.0077$ & $0.9555\pm0.0261$ & $12.720\pm0.099$ & $0.622\pm0.017$ & $0.050$ & $13.588\pm0.167$ & $21.863\pm0.425$ & $-0.459$ \\
+LRG2 & 0.706 & $0.9749\pm0.0067$ & $0.9842\pm0.0227$ & $16.050\pm0.110$ & $0.892\pm0.021$ & $-0.018$ & $17.351\pm0.177$ & $19.455\pm0.330$ & $-0.404$ \\
+LRG3+ELG1 & 0.934 & $0.9886\pm0.0046$ & $1.0237\pm0.0157$ & $19.721\pm0.091$ & $1.223\pm0.019$ & $0.056$ & $21.576\pm0.152$ & $17.641\pm0.193$ & $-0.416$ \\
+ELG2 & 1.321 & $0.9911\pm0.0071$ & $1.0257\pm0.0237$ & $24.252\pm0.174$ & $1.948\pm0.045$ & $0.202$ & $27.601\pm0.318$ & $14.176\pm0.221$ & $-0.434$ \\
+QSO & 1.484 & $1.0032\pm0.0153$ & $0.9885\pm0.0564$ & $26.055\pm0.398$ & $2.386\pm0.136$ & $0.044$ & $30.512\pm0.760$ & $12.817\pm0.516$ & $-0.500$ \\
+Ly$\alpha$ & 2.330 & $0.9971\pm0.0082$ & $1.0071\pm0.0216$ & $31.267\pm0.256$ & $4.518\pm0.097$ & $0.574$ & $38.988\pm0.531$ & $8.632\pm0.101$ & $-0.431$ \\
+LRG3 & 0.922 & $0.9936\pm0.0053$ & $0.9996\pm0.0172$ & $19.656\pm0.105$ & $1.232\pm0.021$ & $0.106$ & $21.648\pm0.178$ & $17.577\pm0.213$ & $-0.406$ \\
+ELG1 & 0.955 & $0.9888\pm0.0091$ & $1.0574\pm0.0291$ & $20.008\pm0.183$ & $1.220\pm0.033$ & $0.420$ & $21.707\pm0.335$ & $17.803\pm0.297$ & $-0.462$ \\
+\end{tabular}
+\end{ruledtabular}
+\label{tab:desi_bao_dr2}
+\end{table*}
+
+The same DESI paper also provides compact cosmological summaries.  In flat \LCDM{}, the DESI-only BAO fit gives
+\begin{equation}
+\Omega_m=0.2975\pm0.0086,\qquad h r_d=(101.54\pm0.73)\,{\rm Mpc},
+\label{eq:desi_lcdm_summary}
+\end{equation}
+with correlation coefficient $r=-0.92$ between these two parameters \cite{DESIDR2}.  Calibrating the BAO scale with a conservative BBN prior gives $H_0=68.51\pm0.58\kmsMpc$, while adding the CMB acoustic angular scale gives $H_0=68.45\pm0.47\kmsMpc$ \cite{DESIDR2}.  These numbers are not evidence for the clock model; they are the absolute-scale targets a transition branch must preserve if it leaves pre-recombination physics standard.
+
+In the effective CPL description,
+\begin{equation}
+w(a)=w_0+w_a(1-a),
+\label{eq:CPL}
+\end{equation}
+DESI DR2 favors the quadrant $w_0>-1$, $w_a<0$.  The most relevant summary values are listed in Table~\ref{tab:desi_w0wa}.  This table is useful because the constant-index clock branch maps to a constant effective equation of state, whereas a viable transition branch must reconstruct a redshift-dependent $w_{\rm eff}(z)$ capable of matching the DESI-preferred shape.
+
+\begin{table*}[t]
+\footnotesize
+\caption{DESI DR2 CPL summaries that define the effective expansion-history target.  The last two columns list the improvement of the maximum-posterior effective $\chi^2$ and the corresponding frequentist significance for $w_0w_a$CDM relative to \LCDM{} with two additional parameters, as reported in Ref.~\cite{DESIDR2}.}
+\begin{ruledtabular}
+\begin{tabular}{lcccccc}
+Data combination & $\Omega_m$ & $H_0$ [$\mathrm{km\,s^{-1}\,Mpc^{-1}}$] & $w_0$ & $w_a$ & $\Delta\chi^2_{\rm MAP}$ & Signif. \\
+\hline
+DESI & $0.352^{+0.041}_{-0.018}$ & -- & $-0.48^{+0.35}_{-0.17}$ & $< -1.34$ & $-4.7$ & $1.7\sigma$ \\
+DESI+CMB & $0.353\pm0.021$ & $63.6^{+1.6}_{-2.1}$ & $-0.42\pm0.21$ & $-1.75\pm0.58$ & $-12.5$ & $3.1\sigma$ \\
+DESI+CMB+Pantheon+ & $0.3114\pm0.0057$ & $67.51\pm0.59$ & $-0.838\pm0.055$ & $-0.62^{+0.22}_{-0.19}$ & $-10.7$ & $2.8\sigma$ \\
+DESI+CMB+Union3 & $0.3275\pm0.0086$ & $65.91\pm0.84$ & $-0.667\pm0.088$ & $-1.09^{+0.31}_{-0.27}$ & $-17.4$ & $3.8\sigma$ \\
+DESI+CMB+DESY5 & $0.3191\pm0.0056$ & $66.74\pm0.56$ & $-0.752\pm0.057$ & $-0.86^{+0.23}_{-0.20}$ & $-21.0$ & $4.2\sigma$ \\
+\end{tabular}
+\end{ruledtabular}
+\label{tab:desi_w0wa}
+\end{table*}
+
+The DESI extended-dark-energy paper sharpens the interpretation of Table~\ref{tab:desi_w0wa}.  It finds that the low-redshift trend is not unique to the CPL form: alternative two-parameter equations of state produce similar improvements in fit for DESI+CMB+Union3, as shown in Table~\ref{tab:desi_extended_param}.  It also reports that the reconstructed $Om(z)$ statistic deviates from constancy at more than $2\sigma$ over approximately $0\lesssim z\lesssim0.5$, that the reconstructed deceleration history suggests an onset of acceleration around $z_{\rm acc}\simeq0.8$ compared with $z_{\rm acc}\simeq0.65$ for the corresponding \LCDM{} fit, and that Gaussian-process reconstructions localize the effective phantom crossing near $z\sim0.5$ \cite{DESIExtended}.  For the clock model, the conservative reading is that any successful transition branch must mimic a background history that looks like $w(z\gtrsim0.5)<-1$ and $w(z\lesssim0.5)>-1$ in a smooth-dark-energy reconstruction, without interpreting that reconstructed $w(z)$ as a physical dark-energy fluid.
+
+\begin{table*}[t]
+\footnotesize
+\caption{DESI extended-analysis robustness check for DESI+CMB+Union3.  The values show that several two-parameter forms capture nearly the same effective expansion-history trend as CPL \cite{DESIExtended}.}
+\begin{ruledtabular}
+\begin{tabular}{lcc}
+Parametrization & $w(a)$ & $\Delta\chi^2_{\rm MAP}$ vs. \LCDM{} \\
+\hline
+BA & $w_0+w_a(1-a)/[a^2+(1-a)^2]$ & $-17.3$ \\
+EXP & $(w_0-w_a)+w_a e^{1-a}$ & $-17.5$ \\
+LOG & $w_0-w_a\ln a$ & $-17.6$ \\
+JBP & $w_0+w_a a(1-a)$ & $-13.6$ \\
+CPL & $w_0+w_a(1-a)$ & $-17.4$ \\
+\end{tabular}
+\end{ruledtabular}
+\label{tab:desi_extended_param}
+\end{table*}
+
+The supernova age-bias paper supplies a different kind of usable input: a concrete systematic deformation of the SN distance scale.  Son \emph{et al.} report a correlation between standardized SN magnitude and progenitor age at the $5.5\sigma$ level, with Hubble-residual slope
+\begin{equation}
+\frac{\Delta {\rm HR}}{\Delta {\rm age}}=0.030\pm0.004\;{\rm mag\,Gyr^{-1}},
+\label{eq:son_age_slope}
+\end{equation}
+and argue that the mean age of old progenitors declines from roughly $10$ to $3\,{\rm Gyr}$ between $z=0$ and $z=1$ \cite{Son2025}.  Their BAO/SN comparison adopts $r_d h=93.9\pm2.8\,{\rm Mpc}$ from the DESI BAO+CMB $w_0w_a$ solution \cite{Son2025}.  Most importantly for this paper, applying their correction shifts the inferred present deceleration parameter toward zero or positive values, as summarized in Table~\ref{tab:son_agebias}.  These values should be read as the reported result of that age-bias analysis, not as a consensus replacement for standard SN likelihoods.
+
+\begin{table*}[t]
+\footnotesize
+\caption{Selected flat $w_0w_a$CDM parameter summaries from the supernova age-bias analysis of Son \emph{et al.} \cite{Son2025}.  The corrected rows are the key systematic test for this paper: after the proposed age correction, the SN-added combinations move back toward the BAO+CMB-only solution and give $q_0$ consistent with zero or positive.}
+\begin{ruledtabular}
+\begin{tabular}{lcccc}
+Data combination & $\Omega_m$ & $w_0$ & $w_a$ & $q_0$ \\
+\hline
+BAO+CMB & $0.352\pm0.021$ & $-0.430\pm0.207$ & $-1.704\pm0.580$ & $0.075\pm0.215$ \\
+BAO+CMB+Pantheon+ & $0.311\pm0.006$ & $-0.838\pm0.054$ & $-0.612\pm0.201$ & $-0.366\pm0.061$ \\
+BAO+CMB+Pantheon+ corrected & $0.353\pm0.006$ & $-0.447\pm0.059$ & $-1.585\pm0.227$ & $0.065\pm0.060$ \\
+BAO+CMB+DES5Y & $0.319\pm0.006$ & $-0.754\pm0.056$ & $-0.848\pm0.217$ & $-0.271\pm0.061$ \\
+BAO+CMB+DES5Y corrected & $0.363\pm0.006$ & $-0.337\pm0.062$ & $-1.902\pm0.246$ & $0.178\pm0.061$ \\
+\end{tabular}
+\end{ruledtabular}
+\label{tab:son_agebias}
+\end{table*}
+
+Son \emph{et al.} further report that the corrected BAO+CMB+SN combinations deviate from \LCDM{} at $9.8\sigma$ for Pantheon+ and $11.7\sigma$ for DES5Y in the $(w_0,w_a)$ plane, and that removing the host-mass step has negligible impact relative to the age-bias correction \cite{Son2025}.  Again, this paper does not adopt those numbers as proof that the Universe is currently decelerating.  The usable point is narrower: a published SN population-drift correction moves the low-redshift standard-candle inference in the same direction as the DESI BAO+CMB effective background.
+
+The connection to the clock theory is now precise.  DESI DR2 supplies direct ruler data, the DESI extended analysis supplies the effective $w(z)$ shape a background-only reconstruction prefers, and the age-bias paper supplies one possible route by which the supernova part of the acceleration inference can move toward a non-accelerating or marginally accelerating present universe.  None of these facts proves the clock theory.  They instead define three empirical gates: match the BAO distances in Table~\ref{tab:desi_bao_dr2}, reproduce an effective DESI-like $w_0>-1$, $w_a<0$ background without an independent Einstein-frame dark-energy fluid, and remain viable when SN population-drift systematics are either included or ruled out by improved data.
+
+\section{Rigid branch no-go and transition branch}
+
+The simplest analytic branch is $n=1$.  It gives $a(t)\propto t^{4/3}$ and $q=-1/4$.  However, if this branch is extended to recombination, the CMB acoustic distance is wrong.  For dust with $E(z)=(1+z)^{3/4}$,
+\begin{equation}
+  D_M^{(n=1)}(z_*)=\frac{c}{H_0}\int_0^{z_*}\frac{\dd z}{(1+z)^{3/4}}
+  =\frac{4c}{H_0}\left[(1+z_*)^{1/4}-1\right].
+\end{equation}
+For $z_*\simeq1090$ and $H_0=67.4\kmsMpc$, this gives $D_M\simeq 8.45\times10^4\Mpc$.  Holding $r_s\simeq144\Mpc$ as a diagnostic would imply an acoustic scale of order $\ell_A\sim1840$, far from the observed scale near $\ell_A\simeq301$ in Planck-like analyses \cite{Planck2018}.  The number is only a proxy, but the conclusion is decisive: the rigid $n=1$ branch is not a viable full cosmology.
+
+A viable branch must recover standard early-universe behavior.  A minimal transition is
+\begin{equation}
+  n(a)=\frac{n_0}{1+(a_t/a)^\beta}
+  =\frac{n_0}{1+[(1+z)/(1+z_t)]^\beta} .
+  \label{eq:transition}
+\end{equation}
+It may be generated by a phase field with late-time attractor
+\begin{equation}
+  \frac{\dd\chi}{\dd\ln a}=\beta,
+  \qquad
+  n(\chi)=n_-+\frac{n_+-n_-}{1+e^{-\chi}},
+\end{equation}
+with $n_-=0$ and $n_+=n_0$.  The recovery condition is
+\begin{equation}
+  n(a\ll a_t)\to0,
+\end{equation}
+so that Eq.~\eqref{eq:clockfriedmann} returns to the ordinary radiation/matter scaling before BBN and recombination.  The late-time acceleration condition is approximately $n(a)>1/2$, corrected near the transition by
+\begin{equation}
+  \frac{\dd\ln E}{\dd\ln a}
+  =\frac{1}{1+n}\frac{\dd\ln E_E}{\dd\ln a}
+  -\frac{\ln E_E}{(1+n)^2}\frac{\dd n}{\dd\ln a} .
+  \label{eq:dlnE}
+\end{equation}
+
+\begin{table}[t]
+\caption{Background-only CMB-distance diagnostics.  These values are not a Planck likelihood; they only show why the rigid branch fails and why a transition is required.  The sound horizon is held fixed at $r_s=144\Mpc$ as a proxy.}
+\label{tab:cmbproxy}
+\begin{ruledtabular}
+\begin{tabular}{lcc}
+Model & $D_M(z=1090)$ [Mpc] & $\pi D_M/r_s$ \\
+\hline
+$\Lambda$CDM, $\Omega_m=0.315$ & $1.39\times10^4$ & 304 \\
+Rigid clock, $n=1$ & $8.45\times10^4$ & 1843 \\
+Transition, $z_t=2,\beta=6$ & $1.07\times10^4$ & 234 \\
+Transition, $z_t=8,\beta=6$ & $1.57\times10^4$ & 343 \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\section{Perturbations and non-background tests}
+
+A clock theory lives or dies beyond the homogeneous expansion.  In unitary gauge $\delta X=0$, scalar perturbations may be written as
+\begin{equation}
+\begin{split}
+  \dd s^2=&-N^2(1+2A)\dd\Tc^2+2a^2\partial_iB\dd\Tc\dd x^i \\
+  &+a^2[(1-2\psi)\delta_{ij}+2\partial_i\partial_jE_s]\dd x^i\dd x^j .
+\end{split}
+\end{equation}
+Linearizing Eq.~\eqref{eq:TIPcov} gives, schematically,
+\begin{equation}
+  A=n\frac{\delta\theta}{\bar\theta}
+  +\ln\left(\frac{\bar\theta}{3H_\star}\right)\delta n+\cdots,
+  \label{eq:pertconstraint}
+\end{equation}
+where $\bar\theta=3H$, $\delta n=n_{,\chi}\delta\chi$, and the omitted terms depend on the exact auxiliary-variable representation of the action.  In proper-time derivatives,
+\begin{equation}
+  \delta\theta=-3(\dot\psi+HA)+\frac{1}{a^2}\nabla^2(B-a^2\dot E_s).
+\end{equation}
+The important point is structural: the lapse perturbation is constrained by the clock sector, not freely chosen as a gauge artifact.
+
+For observational work the scalar sector should be reduced to modified-growth functions,
+\begin{align}
+  -\frac{k^2}{a^2}\Psi &=4\pi G\,\mu(a,k)\rho_m\Delta_m,\label{eq:mu}\\
+  \Phi&=\gamma(a,k)\Psi,\label{eq:gamma}\\
+  \Sigma(a,k)&=\frac{\mu(a,k)[1+\gamma(a,k)]}{2} .\label{eq:sigma}
+\end{align}
+The conservative minimal branch has $\mu=\gamma=1$ on linear cosmological scales, in which case growth is modified only through the background and matter fraction.  That assumption must be derived, not imposed, in a data paper.  The growth equation is
+\begin{equation}
+  D''+\left[2+\frac{\dd\ln H}{\dd\ln a}\right]D'
+  -\frac{3}{2}\mu(a,k)\Omega_m(a)D=0,
+  \label{eq:growth}
+\end{equation}
+where primes denote $\dd/\dd\ln a$.
+
+After nondynamical variables are integrated out, a healthy scalar mode must have a quadratic action of the form
+\begin{equation}
+  S^{(2)}_s=\frac{1}{2}\int\dd t\dd^3k\,a^3Q_s
+  \left[\dot\zeta_k^2-c_s^2\frac{k^2}{a^2}\zeta_k^2-M_s^2\zeta_k^2\right],
+\end{equation}
+with
+\begin{equation}
+  Q_s>0,
+  \qquad
+  c_s^2>0 .
+\end{equation}
+If the rigid limit removes scalar propagation, this must follow from the constraint algebra.  Otherwise, $Q_s$ and $c_s^2$ define the viable parameter region.
+
+The tensor sector is simpler.  Because Eq.~\eqref{eq:action} uses an Einstein-Hilbert tensor action with constant $\mpl$, the transverse-traceless action is
+\begin{equation}
+  S_h^{(2)}=\frac{\mpl^2}{8}\int\dd t\dd^3x\,a^3
+  \left[\dot h_{ij}\dot h_{ij}-\frac{1}{a^2}\partial_kh_{ij}\partial_kh_{ij}\right],
+\end{equation}
+so
+\begin{equation}
+  c_T^2=1 .
+\end{equation}
+This is compatible with the gravitational-wave speed constraint from GW170817-like multimessenger observations \cite{Abbott2017,Baker2017,Creminelli2017,Ezquiaga2017}.
+
+\section{Redshift drift}
+
+For any physical FLRW metric,
+\begin{equation}
+  \dot z=(1+z)H_0-H(z),
+\end{equation}
+and the spectroscopic velocity shift over observer baseline $\Delta t_0$ is
+\begin{equation}
+  \Delta v(z)=c\Delta t_0H_0\left[1-\frac{E(z)}{1+z}\right].
+  \label{eq:redshiftdrift}
+\end{equation}
+For the rigid branch,
+\begin{equation}
+  \Delta v_{n={\rm const}}=c\Delta t_0H_0
+  \left[1-(1+z)^{(1-2n)/[2(1+n)]}\right],
+\end{equation}
+which is positive for all $z>0$ if $n>1/2$.  This statement is not a prediction of the viable theory because the rigid branch fails the CMB.  The transition branch must use Eq.~\eqref{eq:redshiftdrift} after the same parameters fit CMB, BAO, supernovae, and growth.
+
+\begin{table}[t]
+\caption{Diagnostic redshift-drift velocity shifts over 20 yr for $H_0=67.4\kmsMpc$.  These values are analytic diagnostics, not posterior predictions.}
+\label{tab:redshiftdrift}
+\begin{ruledtabular}
+\begin{tabular}{lcc}
+Model & $\Delta v(z=2)$ [cm/s] & $\Delta v(z=4)$ [cm/s] \\
+\hline
+$\Lambda$CDM, $\Omega_m=0.315$ & $-0.43$ & $-10.99$ \\
+Rigid clock, $n=1$ & $+9.93$ & $+13.69$ \\
+Transition, $z_t=2,\beta=6$ & $0.00$ & $-42.04$ \\
+Transition, $z_t=8,\beta=6$ & $+9.91$ & $+13.20$ \\
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+\section{Relation to scale-contraction models}
+
+The closest phenomenological cousin is Henderson's scale-contraction proposal \cite{Henderson2026}.  Henderson separates a spacetime fabric from the spacetime of the material world and uses the relations
+\begin{equation}
+  \dd T=f\dd t,
+  \qquad
+  r=\frac{R}{f},
+  \label{eq:HendersonMap}
+\end{equation}
+where $f$ is the material scale relative to the fabric frame.  Comparing Eq.~\eqref{eq:HendersonMap} with the preferred-clock relation $\dd t=N\dd\Tc$ shows the dictionary
+\begin{equation}
+  \Tc\leftrightarrow T,
+  \qquad
+  N\leftrightarrow f^{-1},
+  \label{eq:dictionary}
+\end{equation}
+up to the naming of which clock is taken as fundamental.  Thus scale contraction can be interpreted as a special realization of clock duality in which ruler contraction and clock conversion are tied by a single scale factor.
+
+Henderson reports several numerical summaries relevant to the present model: a scale-contraction rate of order $3\%/{\rm Gyr}$ for supernova corrections, a supernova-derived present scale factor $f_0\simeq0.64\pm0.05$, a DESI BAO slope estimate $f_0\simeq0.66$, and a supernova magnitude correction of order $-0.034\pm0.004\,{\rm mag/Gyr}$, comparable in scale to the age-bias correction in Eq.~\eqref{eq:son_age_slope}.  Henderson also reproduces $w_0w_a$ fit summaries in which supernova-including fits move closer to the BAO+CMB solution after age/scale correction.  These are useful motivations for a clock-sector analysis, but the preprint does not provide machine-readable posterior chains or a full likelihood pipeline.  Therefore this paper does not include Henderson's plotted curves as data fits; they are treated as literature-motivated consistency checks only.
+
+\section{Local limits and falsifiability}
+
+A preferred foliation can generate post-Newtonian preferred-frame effects.  Any completed theory must calculate the PPN parameters $\gamma_{\rm PPN}$, $\beta_{\rm PPN}$, $\alpha_1$, and $\alpha_2$, as well as binary-pulsar and Shapiro-delay limits \cite{Will2014}.  This paper makes the restricted claim that the homogeneous clock sector gives a no-independent-dark-energy representation of acceleration.  It does not claim that the local preferred-frame problem is solved.
+
+The falsification hierarchy is direct:
+\begin{enumerate}
+  \item If no stable region satisfies $Q_s>0$ and $c_s^2>0$, the branch is ruled out.
+  \item If the transition required by CMB geometry fails BAO+SN distances, the branch is ruled out.
+  \item If the derived $\mu$, $\gamma$, and $\Sigma$ spoil CMB lensing or weak lensing, the branch is ruled out.
+  \item If local PPN preferred-frame parameters exceed experimental bounds, the branch is ruled out.
+  \item If redshift drift and growth are consistent only with generic $w_0w_a$ dark energy and not with the clock consistency relations, the branch loses its physical distinction.
+\end{enumerate}
+
+
+\section{Operational completion of the covariant clock branch}
+\label{sec:operational_completion}
+
+This section supplies the technical completion needed to turn the clock construction from a background theorem into a calculable field theory branch.  It does not add a public CMB/BAO/SN/growth/lensing likelihood pipeline.  It instead fixes the action, constraint algebra, perturbation equations, stability conditions, local limit, and falsifiable non-background closure relations of the minimal stable branch.
+
+The completion uses the following restricted but explicit branch.
+\begin{enumerate}
+  \item Matter, radiation, photons, and gravitational waves propagate on the same physical light cone in the late-universe and local tests considered here, so the physical metric for perturbations and local tests is the metric appearing in the tensor action.  This is the luminal branch, not the galaxy-scale disformal extension in Eq.~\eqref{eq:physicalmetric}.
+  \item The clock constraint is imposed by a Lagrange multiplier, but the conserved multiplier charge is set to zero.  This removes the mimetic-dust-like integration constant and prevents the constraint sector from hiding an independent dark component.
+  \item The transition index is generated by a covariant expansion-triggered field $\chi$.  The background function $n(a)$ is therefore a derived attractor solution, not a free curve inserted after fitting distances.
+  \item The scalar clock itself is nondynamical in the rigid branch.  If a finite clock-stiffness regulator is introduced, its kinetic coefficient and sound speed must obey the inequalities listed below.
+\end{enumerate}
+These assumptions are deliberately narrow: they define the strongest version of the no-independent-dark-energy claim while keeping the theory falsifiable by perturbations, local tests, and redshift-drift/growth/lensing consistency.
+
+\subsection{First-order covariant action}
+\label{subsec:first_order_action}
+
+The schematic action in Eq.~\eqref{eq:action} is made operational by replacing every occurrence of $\theta=\nabla_\mu u^\mu$ inside a nonlinear function by an auxiliary scalar $\Theta$ and imposing $\Theta=\nabla_\mu u^\mu$ with a multiplier $\sigma$.  This converts the theory to first order before variation and makes the absence of Ostrogradsky modes manifest.  Define
+\begin{align}
+  Y_X&\equiv -g^{\mu\nu}\nabla_\mu X\nabla_\nu X,\nonumber\\
+  q&\equiv \sqrt{Y_X}=u^\mu\nabla_\mu X,\label{eq:Yqdefs}\\
+  h_{\mu\nu}&\equiv g_{\mu\nu}+u_\mu u_\nu .\nonumber
+\end{align}
+The completed clock-transition action is
+\begin{widetext}
+\begin{equation}
+\boxed{
+\begin{split}
+S=&\frac{\mpl^2}{2}\int \dd^4x\sqrt{-g}\,R
+   +S_m[\psi_m,g_{\mu\nu}]
+   +S_r[\psi_r,g_{\mu\nu}] \\
+&+\int \dd^4x\sqrt{-g}\left\{
+  \lambda\left[F(q,\Theta,\chi)-1\right]
+  +\sigma\left(\Theta-\nabla_\mu u^\mu\right)
+  -\frac{Z_\chi}{2}g^{\mu\nu}\nabla_\mu\chi\nabla_\nu\chi
+  -U(\chi,\Theta)
+  +{\cal L}_{\rm reg}\right\},
+\end{split}}
+\label{eq:firstorderaction}
+\end{equation}
+\end{widetext}
+where
+\begin{equation}
+  F(q,\Theta,\chi)
+  =N_\star\left(\frac{\Theta}{3H_\star}\right)^{n(\chi)}q .
+  \label{eq:Fdef}
+\end{equation}
+The regulator $\mathcal L_{\rm reg}$ is optional.  In the rigid minimal branch used for the claims below, $\mathcal L_{\rm reg}=0$.  If one wants a finite-speed clock fluctuation instead of a purely constrained clock, a safe regulator is required to have the schematic quadratic form
+\begin{equation}
+  S_{\rm reg}^{(2)}=\frac12\int\dd t\dd^3k\,a^3 Q_X
+  \left[\dot\pi_X^2-c_X^2\frac{k^2}{a^2}\pi_X^2-M_X^2\pi_X^2\right],
+  \label{eq:regulatorquad}
+\end{equation}
+with $Q_X>0$, $0<c_X^2\leq 1$, and $M_X^2\gtrsim -H^2$ over the redshift range being tested.  The rigid branch is the $Q_X\to0$ constraint limit, not a propagating ghost.
+
+After integrating the $\sigma\nabla_\mu u^\mu$ term by parts, Eq.~\eqref{eq:firstorderaction} is equivalent up to a boundary term to
+\begin{equation}
+  {\cal L}_{\rm clk}\doteq
+  \lambda(F-1)+\sigma\Theta+u^\mu\nabla_\mu\sigma
+  -\frac{Z_\chi}{2}(\nabla\chi)^2-U(\chi,\Theta)+{\cal L}_{\rm reg} .
+  \label{eq:firstorderLboundary}
+\end{equation}
+No term in Eq.~\eqref{eq:firstorderLboundary} contains more than one derivative acting on a field.  Higher derivatives in the original $\theta$ notation are therefore auxiliary-variable artifacts, not Ostrogradsky degrees of freedom.
+
+The Euler-Lagrange equations are explicit.  Variation with respect to $\lambda$, $\sigma$, and $\Theta$ gives
+\begin{align}
+  F(q,\Theta,\chi)&=1,\label{eq:lambdaeq}\\
+  \Theta&=\nabla_\mu u^\mu,\label{eq:sigmaeq}\\
+  \sigma&=U_\Theta-\lambda F_\Theta .\label{eq:Thetaeq}
+\end{align}
+Variation with respect to $\chi$ gives
+\begin{equation}
+  Z_\chi\Box\chi-U_\chi+\lambda F_\chi=0.
+  \label{eq:chieq_complete}
+\end{equation}
+Variation with respect to $X$ gives a conserved current,
+\begin{equation}
+  \nabla_\mu J_X^\mu=0,
+  \label{eq:Jconserve_complete}
+\end{equation}
+with
+\begin{align}
+  J_X^\mu&=\lambda F_q u^\mu-q^{-1}h^{\mu\nu}\nabla_\nu\sigma+J_{\rm reg}^\mu,\label{eq:Jexplicit}\\
+  F_q&=N_\star\left(\frac{\Theta}{3H_\star}\right)^{n(\chi)} .\nonumber
+\end{align}
+Here $J_{\rm reg}^\mu$ is absent in the rigid branch.  Equation~\eqref{eq:Jexplicit} is the precise version of the clock-current statement in Eq.~\eqref{eq:Xcurrent}.  In a homogeneous universe it integrates to
+\begin{equation}
+  \frac{\dd}{\dd t}\left(a^3\lambda F_q\right)=0
+  \quad\Rightarrow\quad
+  \lambda F_q=\frac{C_X}{a^3}.
+  \label{eq:lambdacharge}
+\end{equation}
+The minimal no-hidden-component branch sets the conserved charge $C_X=0$.  Since $F_q\ne0$ on the timelike branch, this implies
+\begin{equation}
+  \lambda=0
+  \label{eq:lambdazero}
+\end{equation}
+for the background and for linear perturbations initialized in the same branch.
+
+\subsection{Stress tensor and the no-hidden-density branch}
+\label{subsec:stress_tensor_complete}
+
+Using the first-order form Eq.~\eqref{eq:firstorderLboundary}, the clock-transition stress tensor is
+\begin{align}
+  T^{\rm clk}_{\mu\nu}={}&g_{\mu\nu}{\cal L}_{\rm clk}
+  +Z_\chi\nabla_\mu\chi\nabla_\nu\chi+\lambda F u_\mu u_\nu\nonumber\\
+  &-2u_{(\mu}\nabla_{\nu)}\sigma-\dot\sigma u_\mu u_\nu
+  +T^{\rm reg}_{\mu\nu} .
+  \label{eq:clockstress_explicit}
+\end{align}
+where $\dot\sigma\equiv u^\rho\nabla_\rho\sigma$.  The corresponding projections are
+\begin{align}
+  \rho_{\rm clk}&\equiv T^{\rm clk}_{\mu\nu}u^\mu u^\nu\nonumber\\
+  &=-{\cal L}_{\rm clk}+Z_\chi\dot\chi^2+\lambda F+\dot\sigma+\rho_{\rm reg},\label{eq:rho_clock_general}\\
+  p_{\rm clk}&\equiv \frac13h^{\mu\nu}T^{\rm clk}_{\mu\nu}\nonumber\\
+  &={\cal L}_{\rm clk}+\frac{Z_\chi}{3}h^{\mu\nu}\nabla_\mu\chi\nabla_\nu\chi+p_{\rm reg},\label{eq:p_clock_general}\\
+  \pi^{\rm clk}_{\mu\nu}&\equiv
+  \left(h_\mu{}^\alpha h_\nu{}^\beta-\frac13h_{\mu\nu}h^{\alpha\beta}\right)T^{\rm clk}_{\alpha\beta} .\nonumber
+\end{align}
+On the constraint surface $F=1$ and $\Theta=\nabla_\mu u^\mu$.  On the zero-charge branch $\lambda=0$.  If the transition field sits on its attractor with $U=0$, $U_\Theta=0$, and spatial gradients negligible, Eq.~\eqref{eq:Thetaeq} gives $\sigma=0$ and
+\begin{equation}
+  \rho_{\rm clk}=\frac{Z_\chi}{2}\dot\chi^2+U,
+  \qquad
+  p_{\rm clk}=\frac{Z_\chi}{2}\dot\chi^2-U.
+  \label{eq:rho_p_chi_only}
+\end{equation}
+The no-independent-dark-energy branch is the technically natural subregion
+\begin{equation}
+  \frac{Z_\chi\dot\chi^2}{2\mpl^2H^2}\ll1,
+  \qquad
+  \frac{|U|}{\mpl^2H^2}\ll1,
+  \qquad
+  C_X=0,
+  \label{eq:nohiddenconditions}
+\end{equation}
+so that the clock constraint changes the relation between the clock foliation and the matter-clock expansion without smuggling in a separate homogeneous dark-energy density.  If Eq.~\eqref{eq:nohiddenconditions} is violated, the model becomes an ordinary scalar-tensor or mimetic-like dark-sector model and no longer supports the narrow no-independent-dark-energy claim.
+
+Diffeomorphism invariance gives the total Noether identity
+\begin{equation}
+  \nabla_\mu\left(T^{\mu\nu}_{m}+T^{\mu\nu}_{r}+T^{\mu\nu}_{\rm clk}\right)=0.
+  \label{eq:totalbianchi}
+\end{equation}
+Because matter and radiation are minimally coupled to the physical metric in the luminal branch,
+\begin{equation}
+  \nabla_\mu T^{\mu\nu}_{m}=0,
+  \qquad
+  \nabla_\mu T^{\mu\nu}_{r}=0.
+  \label{eq:matterconservationcomplete}
+\end{equation}
+Equations~\eqref{eq:Jconserve_complete} and \eqref{eq:chieq_complete} are then exactly the conditions required by Eq.~\eqref{eq:totalbianchi}; the clock constraint is not an external time-dependent prescription.
+
+\subsection{ADM form, constraint algebra, and degrees of freedom}
+\label{subsec:ADM_constraints_complete}
+
+In ADM variables,
+\begin{equation}
+  \dd s^2=-N^2\dd T^2+h_{ij}(\dd x^i+N^i\dd T)(\dd x^j+N^j\dd T),
+\end{equation}
+unitary gauge is $X=T$.  Then $q=1/N$ and
+\begin{equation}
+  \Theta=K\equiv h^{ij}K_{ij},
+  \qquad
+  K_{ij}=\frac{1}{2N}\left(\dot h_{ij}-D_iN_j-D_jN_i\right).
+\end{equation}
+The TIP constraint becomes
+\begin{equation}
+  {\cal C}_{\rm TIP}^{\rm ADM}
+  =N_\star\left(\frac{K}{3H_\star}\right)^{n(\chi)}\frac{1}{N}-1=0 .
+  \label{eq:ADM_TIP}
+\end{equation}
+Its lapse derivative is
+\begin{equation}
+  \frac{\partial {\cal C}_{\rm TIP}^{\rm ADM}}{\partial N}
+  =-\frac{1+n}{N}
+  \quad\hbox{on }{\cal C}_{\rm TIP}^{\rm ADM}=0,
+  \label{eq:nondegenerate_lapse}
+\end{equation}
+where the derivative includes the $K\propto N^{-1}$ dependence.  Therefore the lapse is fixed algebraically for $n\ne-1$ and cannot become a propagating Ostrogradsky variable.
+
+The constraint classes are as follows.
+\begin{enumerate}
+  \item The three momentum constraints $\mathcal H_i\approx0$ remain first class and generate spatial diffeomorphisms.
+  \item Before gauge fixing, the Hamiltonian constraint and momentum constraints generate spacetime diffeomorphisms.  In unitary gauge, the pair $X-T\approx0$ and the Hamiltonian generator form a second-class gauge-fixing pair.  This is the standard Stueckelberg-to-unitary-gauge conversion, not a loss of covariance.
+  \item The pairs $(p_\lambda,{\cal C}_{\rm TIP})$, $(p_\sigma,\Theta-\nabla_\mu u^\mu)$, and $(p_\Theta,\sigma-U_\Theta+\lambda F_\Theta)$ are second class.  Their Poisson-bracket matrix is nonsingular whenever Eq.~\eqref{eq:nondegenerate_lapse} holds and $U_{\Theta\Theta}-\lambda F_{\Theta\Theta}$ is finite.
+  \item The shift variables retain their usual primary constraints and enforce $\mathcal H_i\approx0$.  The lapse primary constraint is paired with Eq.~\eqref{eq:ADM_TIP} in unitary gauge, so no independent lapse mode propagates.
+\end{enumerate}
+After solving the second-class constraints, the reduced phase space is that of general relativity plus the transition scalar if $Z_\chi\ne0$:
+\begin{equation}
+  N_{\rm dof}=2+\begin{cases}
+  0, & Z_\chi=0\hbox{ or }M_\chi^2/H^2\to\infty,\\
+  1, & Z_\chi>0\hbox{ finite}.
+  \end{cases}
+  \label{eq:dof_count_final}
+\end{equation}
+The two degrees of freedom in the first term are the tensor polarizations.  There is no propagating vector mode because the preferred direction is hypersurface orthogonal, $u_\mu\propto\nabla_\mu X$, and because no Einstein-aether vector kinetic terms are introduced in the minimal branch.  The scalar clock mode is nondynamical in the rigid branch; it imposes an elliptic constraint in the same sense that the ADM lapse imposes a constraint in GR.
+
+\subsection{Covariant transition branch from $\chi$ dynamics}
+\label{subsec:transition_chi_completion}
+
+The transition index is generated by an expansion-triggered attractor rather than by a free function of $a$.  A convenient parametrization is
+\begin{equation}
+  n(\chi)=\frac{n_0}{1+e^{-\chi}},
+  \qquad
+  0<n_0<\mathcal O(1),
+  \label{eq:nchi_logistic}
+\end{equation}
+with an effective potential
+\begin{equation}
+  U(\chi,\Theta)=\frac{M_\chi^2Z_\chi}{2}\left[\chi-\chi_{\rm att}(\Theta)\right]^2
+  +U_{\rm off}(\chi),
+  \label{eq:U_chi_theta}
+\end{equation}
+where
+\begin{equation}
+  \chi_{\rm att}(\Theta)=-p\ln\left(\frac{\Theta}{\Theta_t}\right),
+  \qquad
+  p>0.
+  \label{eq:chi_attractor}
+\end{equation}
+The offset $U_{\rm off}$ is chosen so that $U=0$ on the attractor in the no-hidden-density branch.  When $M_\chi^2\gg H^2$, Eq.~\eqref{eq:chieq_complete} gives
+\begin{equation}
+  \chi=\chi_{\rm att}(\Theta)+\mathcal O(H^2/M_\chi^2),
+  \label{eq:chi_tracks}
+\end{equation}
+so that
+\begin{equation}
+  n(\Theta)=\frac{n_0}{1+(\Theta/\Theta_t)^p}+
+  \mathcal O(H^2/M_\chi^2).
+  \label{eq:n_theta_transition}
+\end{equation}
+This is covariant because $\Theta$ is the scalar expansion of the preferred foliation.  In the radiation era, $\Theta\propto a^{-2}$ and $n\propto a^{2p}$.  In the matter era, $\Theta\propto a^{-3/2}$ and $n\propto a^{3p/2}$.  Thus Eq.~\eqref{eq:transition} is recovered as the matter-era approximation with
+\begin{equation}
+  \beta=\frac32p,
+  \qquad
+  1+z_t\simeq a_t^{-1},
+  \qquad
+  \Theta(a_t)=\Theta_t .
+  \label{eq:beta_p_relation}
+\end{equation}
+The useful code-ready system is
+\begin{align}
+  \frac{\dd n}{\dd\ln a}&=\beta n\left(1-\frac{n}{n_0}\right),\label{eq:nprime_code}\\
+  \frac{\dd^2 n}{\dd(\ln a)^2}&=\beta^2 n\left(1-\frac{n}{n_0}\right)\left(1-2\frac{n}{n_0}\right),\label{eq:nsecond_code}\\
+  E(a)&=E_E(a)^{1/[1+n(a)]},\label{eq:E_code}\\
+  \frac{\dd\ln E}{\dd\ln a}&=\frac{1}{1+n}\frac{\dd\ln E_E}{\dd\ln a}
+  -\frac{\ln E_E}{(1+n)^2}\frac{\dd n}{\dd\ln a} .\label{eq:Eprime_code}
+\end{align}
+These equations are sufficient to implement the background in CLASS, CAMB, or a custom solver without inserting a dark-energy density variable.
+
+A conservative prior box that enforces early recovery and late acceleration is
+\begin{align}
+  0.5<n_0<1.5,\qquad 0<z_t<3,
+  \qquad \beta>3,\label{eq:transition_priors}\\
+  Z_\chi>0,
+  \qquad M_\chi^2>0 .\nonumber
+\end{align}
+For the benchmark $n_0=0.8$, $z_t=1$, $\beta=6$, Eq.~\eqref{eq:transition} gives
+\begin{center}
+\begin{tabular}{c|cccc}
+$z$ & $10^9$ & $1090$ & $10$ & $2$ \\
+\hline
+$n(z)$ & $5.1\times10^{-53}$ & $3.0\times10^{-17}$ & $2.9\times10^{-5}$ & $6.5\times10^{-2}$
+\end{tabular}
+\begin{tabular}{c|ccc}
+$z$ & $1$ & $0.5$ & $0$ \\
+\hline
+$n(z)$ & $0.40$ & $0.68$ & $0.79$
+\end{tabular}
+\end{center}
+so BBN, recombination, and the early radiation hierarchy are recovered to far better than the percent level while the late branch crosses the acceleration threshold.
+
+\section{Linear perturbation equations and gauge checks}
+\label{sec:linear_perturbations_completion}
+
+For direct comparison with Boltzmann codes, use conformal Newtonian gauge in the physical frame,
+\begin{equation}
+  \dd s^2=a^2(\eta)\left[-(1+2\Psi)\dd\eta^2+(1-2\Phi)\delta_{ij}\dd x^i\dd x^j\right].
+  \label{eq:newtonian_gauge_complete}
+\end{equation}
+The Bardeen potentials $\Phi$ and $\Psi$ are gauge invariant.  In unitary gauge, where $\delta X=0$, a time shift $\eta\to\eta+T$ maps the scalar metric variables into Eq.~\eqref{eq:newtonian_gauge_complete}; the invariant clock perturbation is
+\begin{equation}
+  Q_X\equiv \delta X-\bar X'T,
+  \label{eq:QX_gauge}
+\end{equation}
+and unitary gauge is the gauge choice $Q_X=0$.  Therefore any observable written in terms of $\Phi$, $\Psi$, matter density contrasts, velocity divergences, and lensing combinations is gauge independent.
+
+With prime denoting $\dd/\dd\eta$ and $\mathcal H=a'/a$, the matter and radiation conservation equations are standard:
+\begin{align}
+  \delta_A'={}&-(1+w_A)(\theta_A-3\Phi')
+  -3\mathcal H(c_{sA}^2-w_A)\delta_A,\label{eq:fluid_delta}\\
+  \theta_A'={}&-\mathcal H(1-3w_A)\theta_A
+  -\frac{w_A'}{1+w_A}\theta_A\nonumber\\
+  &+\frac{k^2c_{sA}^2}{1+w_A}\delta_A+k^2\Psi-k^2\sigma_A .\label{eq:fluid_theta}
+\end{align}
+For cold matter, $w_A=c_{sA}^2=\sigma_A=0$.  For photons and massless neutrinos, the usual Boltzmann hierarchies are unchanged in the early $n\to0$ regime.
+
+The linear Einstein equations are
+\begin{widetext}
+\begin{align}
+  k^2\Phi+3\mathcal H(\Phi'+\mathcal H\Psi)
+  &=4\pi G a^2\left(\delta\rho_m+\delta\rho_r+\delta\rho_{\rm clk}\right),\label{eq:Einstein00pert}\\
+  k^2(\Phi'+\mathcal H\Psi)
+  &=4\pi G a^2\left[(\rho_m+p_m)\theta_m+(\rho_r+p_r)\theta_r
+  +(\rho_{\rm clk}+p_{\rm clk})\theta_{\rm clk}\right],\label{eq:Einstein0ipert}\\
+  \Phi''+\mathcal H(\Psi'+2\Phi')+(2\mathcal H'+\mathcal H^2)\Psi
+  +\frac{k^2}{3}(\Phi-\Psi)
+  &=4\pi G a^2\left(\delta p_r+\delta p_{\rm clk}\right),\label{eq:Einsteintracepert}\\
+  k^2(\Phi-\Psi)
+  &=12\pi G a^2\left[(\rho_r+p_r)\sigma_r+(\rho_{\rm clk}+p_{\rm clk})\sigma_{\rm clk}\right].\label{eq:Einsteinanispert}
+\end{align}
+\end{widetext}
+The clock perturbations are obtained by linearizing Eqs.~\eqref{eq:lambdaeq}--\eqref{eq:chieq_complete}.  The TIP perturbation is
+\begin{equation}
+  \delta\ln q+n\frac{\delta\Theta}{\bar\Theta}
+  +\ln\left(\frac{\bar\Theta}{3H_\star}\right)n_\chi\delta\chi=0 .
+  \label{eq:linear_TIP_complete}
+\end{equation}
+In unitary gauge $\delta\ln q=-\delta N/N$, while
+\begin{equation}
+  \delta\Theta=-3(\dot\psi+HA)+\frac{k^2}{a^2}\left(B-a^2\dot E_s\right)
+  \label{eq:deltatheta_complete}
+\end{equation}
+in the scalar ADM notation used earlier.  Equation~\eqref{eq:linear_TIP_complete} is the lapse constraint that must be implemented in any Boltzmann treatment.
+
+The transition perturbation obeys
+\begin{align}
+  \delta\ddot\chi+3H\delta\dot\chi+
+  \left(\frac{k^2}{a^2}+M_{\chi,\rm eff}^2\right)\delta\chi
+  ={}&\dot\chi(\dot\Psi+3\dot\Phi)\nonumber\\
+  &-\frac{2U_\chi}{Z_\chi}\Psi+\frac{\lambda}{Z_\chi}\delta F_\chi .
+  \label{eq:deltachi_complete}
+\end{align}
+where
+\begin{equation}
+  M_{\chi,\rm eff}^2=\frac{1}{Z_\chi}\left(U_{\chi\chi}-\lambda F_{\chi\chi}\right).
+  \label{eq:Meffchi}
+\end{equation}
+On the no-hidden-density branch, $\lambda=0$ and $M_{\chi,\rm eff}^2\simeq M_\chi^2$.
+
+The modified-growth functions are then defined by
+\begin{align}
+  -\frac{k^2}{a^2}\Psi&=4\pi G\mu(a,k)\rho_m\Delta_m,\label{eq:mu_complete}\\
+  \Phi&=\gamma(a,k)\Psi,\label{eq:gamma_complete}\\
+  \Sigma(a,k)&=\frac{\mu(a,k)[1+\gamma(a,k)]}{2} .\label{eq:sigma_complete2}
+\end{align}
+In the minimal stable branch,
+\begin{align}
+  \mu(a,k)&=1+\mathcal O\left(\frac{H^2}{M_\chi^2},\frac{k^2}{a^2M_\chi^2},C_X\right),\nonumber\\
+  \gamma(a,k)&=1+\mathcal O\left(\frac{H^2}{M_\chi^2},\frac{k^2}{a^2M_\chi^2},C_X\right),\label{eq:mu_gamma_sigma_result}\\
+  \Sigma(a,k)&=1+\mathcal O\left(\frac{H^2}{M_\chi^2},\frac{k^2}{a^2M_\chi^2},C_X\right).\nonumber
+\end{align}
+Thus the conservative branch is not a free modified-gravity parametrization.  Once $E(a)$ is fixed by the clock transition, growth and lensing are fixed up to the controlled heavy-field corrections in Eq.~\eqref{eq:mu_gamma_sigma_result}.
+
+For late nonrelativistic matter, the gauge-invariant density growth obeys
+\begin{align}
+  D''_x+\left[2+\frac{\dd\ln H}{\dd\ln a}\right]D'_x
+  -\frac32\frac{\Omega_{m0}a^{-3}}{E^2(a)}\mu(a,k)D&=0,
+  \label{eq:growth_complete_x}\\
+  x&\equiv\ln a .\nonumber
+\end{align}
+where $D'_x=\dd D/\dd x$.  Equation~\eqref{eq:growth_complete_x}, together with Eqs.~\eqref{eq:nprime_code}--\eqref{eq:Eprime_code} and \eqref{eq:mu_gamma_sigma_result}, is the minimal Boltzmann-ready growth sector.
+
+\section{Quadratic action and stability conditions}
+\label{sec:quadratic_stability_completion}
+
+The scalar perturbations are organized most cleanly in comoving curvature variables.  Let $\zeta$ be the curvature perturbation on total-matter comoving slices and define the gauge-invariant transition fluctuation
+\begin{equation}
+  Q_\chi\equiv\delta\chi-\frac{\dot\chi}{H}\zeta .
+  \label{eq:Qchi_def}
+\end{equation}
+After solving the nondynamical lapse and shift constraints, the scalar quadratic action has the form
+\begin{widetext}
+\begin{equation}
+  S_s^{(2)}=\frac12\int\dd t\frac{\dd^3k}{(2\pi)^3}a^3
+  \left[
+  \dot{\mathbf q}^{\dagger}{\bf K}\dot{\mathbf q}
+  -\frac{k^2}{a^2}\mathbf q^{\dagger}{\bf G}\mathbf q
+  -\mathbf q^{\dagger}{\bf M}\mathbf q
+  \right],
+  \qquad
+  \mathbf q=(\zeta_m,\zeta_r,Q_\chi),
+  \label{eq:scalar_quadratic_matrix}
+\end{equation}
+\end{widetext}
+where $\zeta_m$ and $\zeta_r$ are the standard matter and radiation scalar variables.  In the minimal branch,
+\begin{align}
+  {\bf K}&={\rm diag}\left(Q_m,Q_r,Z_\chi\right)+\mathcal O(\epsilon_{\rm mix}),\label{eq:Kmatrix}\\
+  {\bf G}&={\rm diag}\left(c_m^2Q_m,c_r^2Q_r,Z_\chi\right)+\mathcal O(\epsilon_{\rm mix}),\label{eq:Gmatrix}\\
+  {\bf M}_{\chi\chi}&=Z_\chi M_{\chi,\rm eff}^2+\mathcal O(H^2\epsilon_{\rm mix}),\label{eq:Mmatrix}
+\end{align}
+with
+\begin{equation}
+  \epsilon_{\rm mix}\equiv
+  \left|\frac{n_\chi\dot\chi}{H}\right|+
+  \frac{H^2}{M_\chi^2}+|C_X| .
+  \label{eq:epsmix}
+\end{equation}
+Cold matter has $c_m^2=0$ because it is pressureless; this is not a gradient instability.  Radiation has $c_r^2=1/3$.  The transition mode has $c_\chi^2=1$ for the canonical kinetic term in Eq.~\eqref{eq:firstorderaction}.  The scalar no-ghost and no-gradient conditions are therefore
+\begin{align}
+  Q_m>0,
+  \qquad Q_r>0,
+  \qquad Z_\chi>0,\label{eq:scalar_stability_conditions}\\
+  c_r^2=\frac13>0,
+  \qquad c_\chi^2=1>0 .\nonumber
+\end{align}
+with the tachyon bound
+\begin{equation}
+  M_{\chi,\rm eff}^2>-\frac94H^2 .
+  \label{eq:tachyon_bound}
+\end{equation}
+for no instability faster than a Hubble time, and the stronger working prior $M_{\chi,\rm eff}^2>0$ for the stable branch used in forecasts.
+
+The vector sector contains only the usual metric vector and matter vorticity.  With no transverse aether kinetic terms, the metric vector is nondynamical.  In Fourier space the quadratic action is schematically
+\begin{equation}
+  S_V^{(2)}=\frac{\mpl^2}{4}\int\dd t\frac{\dd^3k}{(2\pi)^3}a k^2
+  \left(\dot F_i-S_i/a\right)^2+S_{m,V}^{(2)}+S_{r,V}^{(2)},
+  \label{eq:vector_action}
+\end{equation}
+where $F_i$ and $S_i$ are transverse.  Solving the shift constraint removes $S_i$ and leaves only the decaying matter/radiation vorticity.  There is no vector ghost because there is no propagating vector kinetic eigenvalue with the wrong sign.
+
+The tensor action is exact:
+\begin{equation}
+  S_T^{(2)}=\frac{\mpl^2}{8}\int\dd t\dd^3x\,a^3
+  \left[\dot h_{ij}\dot h_{ij}-\frac{1}{a^2}\partial_kh_{ij}\partial_kh_{ij}\right].
+  \label{eq:tensor_action_complete}
+\end{equation}
+Thus
+\begin{align}
+  Q_T&=\frac{\mpl^2}{4}>0,
+  \qquad c_T^2=1,
+  \qquad \alpha_T=0,\label{eq:tensor_conditions_complete}\\
+  \alpha_M&=\frac{\dd\ln \mpl^2}{\dd\ln a}=0 .\nonumber
+\end{align}
+and the gravitational-wave luminosity distance equals the electromagnetic luminosity distance in the luminal branch,
+\begin{equation}
+  d_L^{\rm GW}(z)=d_L^{\rm EM}(z).
+  \label{eq:gw_lum_distance}
+\end{equation}
+
+The stable parameter region is therefore analytically nonempty.  A sufficient set is
+\begin{align}
+  Z_\chi>0,
+  \qquad M_\chi^2>0,
+  \qquad C_X=0,
+  \qquad |\epsilon_{\rm mix}|\ll1,\label{eq:stable_region_sufficient}\\
+  n(a_{\rm BBN})\ll10^{-2},
+  \qquad n(a_*)\ll10^{-3}.\nonumber
+\end{align}
+where $a_*$ denotes recombination.  The benchmark $(n_0,z_t,\beta)=(0.8,1,6)$ lies inside this analytic region.
+
+A deterministic, non-likelihood stability-domain scan was also made over the transition priors in Eq.~\eqref{eq:transition_priors}.  The grid used $101\times121\times141=1,723,161$ points with
+\begin{equation}
+  n_0\in[0.5,1.5],\qquad z_t\in[0,3],\qquad \beta\in[3,10],
+  \label{eq:scan_grid}
+\end{equation}
+and imposed $Z_\chi>0$, $M_\chi^2>0$, $C_X=0$, $n(z=0)>1/2$,
+\begin{equation}
+  n_{\rm BBN}|\ln E_E(a_{\rm BBN})|<10^{-2},\qquad
+  n_*|\ln E_E(a_*)|<10^{-3}.
+  \label{eq:scan_cuts}
+\end{equation}
+Using the fiducial early-universe bookkeeping values $\Omega_{m0}=0.315$ and $\Omega_{r0}=9.2\times10^{-5}$ only to evaluate $E_E(a)$ inside these cuts, $1,635,950$ points pass, i.e. $94.9\%$ of the grid.  This is not a cosmological fit; it is the requested stability scan showing that the theory-side viable domain is not a fine-tuned point.  The benchmark point gives
+\begin{align}
+  n_{\rm BBN}|\ln E_E|&=1.9\times10^{-51},\nonumber\\
+  n_*|\ln E_E|&=3.1\times10^{-16},
+  \qquad n(0)=0.788 .
+  \label{eq:benchmark_scan_values}
+\end{align}
+A public likelihood paper should replace the scan above by a sampled posterior over Eq.~\eqref{eq:transition_priors}; the stability inequalities are the cuts to impose at every sampled point.
+
+\section{Early-universe recovery including perturbations}
+\label{sec:early_universe_completion}
+
+The transition is acceptable only if it recovers standard physics before BBN and recombination not only in the background but also in perturbations.  Let $a_{\rm BBN}\sim10^{-9}$ and $a_*\simeq1/1091$.  For the expansion-triggered branch,
+\begin{equation}
+  n(a)\simeq n_0\left(\frac{\Theta_t}{\Theta(a)}\right)^p
+  \propto
+  \begin{cases}
+  a^{2p}, & \hbox{radiation era},\\
+  a^{3p/2}, & \hbox{matter era}.
+  \end{cases}
+  \label{eq:early_scaling_n}
+\end{equation}
+Thus for $p>1$ all early deviations are power-law suppressed.  The fractional background deviation is
+\begin{equation}
+  \frac{\Delta H}{H_{\rm GR}}
+  =-\frac{n}{1+n}\ln E_E
+  +\mathcal O(n^2),
+  \label{eq:early_H_deviation}
+\end{equation}
+so the sufficient early-universe bounds are
+\begin{equation}
+  n_{\rm BBN}\,|\ln E_E(a_{\rm BBN})|\ll 10^{-2},
+  \qquad
+  n_*\,|\ln E_E(a_*)|\ll 10^{-3} .
+  \label{eq:early_bounds}
+\end{equation}
+For the benchmark above these products are many orders of magnitude below the quoted tolerances.
+
+The perturbation recovery follows from Eq.~\eqref{eq:linear_TIP_complete}.  In the early limit,
+\begin{equation}
+  \delta\ln q= -n\frac{\delta\Theta}{\bar\Theta}
+  -\ln\left(\frac{\bar\Theta}{3H_\star}\right)n_\chi\delta\chi
+  \longrightarrow0,
+  \label{eq:early_lapse_recovery}
+\end{equation}
+because $n\to0$ and $\delta\chi=\mathcal O(H^2/M_\chi^2)$.  Therefore the clock constraint does not introduce an early lapse perturbation, anisotropic stress, entropy mode, or modified Poisson equation.  The adiabatic superhorizon initial conditions reduce to the standard radiation-era form,
+\begin{align}
+  \Phi&=\Phi_i+\mathcal O(k^2\eta^2),
+  &\Psi&=\Phi_i+\mathcal O(R_\nu),\label{eq:IC_phi}\\
+  \delta_\gamma&=\delta_\nu=-2\Phi_i,
+  &\delta_b&=\delta_c=-\frac32\Phi_i,\label{eq:IC_delta}\\
+  \theta_A&=\mathcal O(k^2\eta),
+  &\delta\chi&=\mathcal O\left(\frac{H^2}{M_\chi^2}n\Phi_i\right),\nonumber\\
+  \delta X&=0 &&\hbox{in unitary gauge}.\label{eq:IC_chi}
+\end{align}
+Here $R_\nu$ denotes the usual neutrino anisotropic-stress correction.  These are the initial conditions a Boltzmann implementation should use.
+
+\section{Local, PPN, fifth-force, and causality limits}
+\label{sec:local_completion}
+
+The minimal branch is constructed so that the local weak-field limit reduces to GR plus a decoupled massive scalar at its minimum.  In an isolated quasi-static system with asymptotically Minkowski boundary conditions, choose the local attractor
+\begin{align}
+  n_{\rm loc}=0,
+  \qquad \lambda_{\rm loc}=0,
+  \qquad \sigma_{\rm loc}=0,\label{eq:local_limit_conditions}\\
+  \chi=\chi_{\rm loc}+\delta\chi,
+  \qquad M_\chi r_{\rm SS}\gg1 .\nonumber
+\end{align}
+where $r_{\rm SS}$ is a solar-system length scale.  The local action then becomes
+\begin{widetext}
+\begin{equation}
+  S_{\rm local}=\frac{\mpl^2}{2}\int\dd^4x\sqrt{-g}R
+  +S_m[\psi_m,g_{\mu\nu}]
+  -\frac{Z_\chi}{2}\int\dd^4x\sqrt{-g}\left[(\nabla\delta\chi)^2+M_\chi^2\delta\chi^2\right]
+  +\cdots .
+  \label{eq:local_action_GR}
+\end{equation}
+\end{widetext}
+Since $\delta\chi$ has no direct matter coupling in this branch, it does not mediate a fifth force.  The PPN parameters are therefore
+\begin{equation}
+  \boxed{
+  \gamma_{\rm PPN}=1,
+  \qquad
+  \beta_{\rm PPN}=1,
+  \qquad
+  \alpha_1=0,
+  \qquad
+  \alpha_2=0}
+  \label{eq:PPN_results}
+\end{equation}
+up to corrections suppressed by $H_0^2r_{\rm SS}^2$, $e^{-M_\chi r_{\rm SS}}$, and any deliberately added nonminimal matter coupling.  If a residual scalar coupling $\beta_\chi$ is added outside the minimal branch, the fifth-force potential would be
+\begin{equation}
+  V(r)=-\frac{Gm_1m_2}{r}\left[1+2\beta_\chi^2e^{-M_\chi r}\right],
+  \label{eq:fifth_force_potential}
+\end{equation}
+and solar-system tests require the bracketed correction to be below the relevant experimental bound.  The branch used here sets $\beta_\chi=0$.
+
+The preferred-frame danger is also explicit.  General Einstein-aether or khronometric theories contain independent kinetic coefficients for $\nabla_\mu u_\nu$; those coefficients generate nonzero $\alpha_1$ and $\alpha_2$ unless tuned.  The minimal branch sets those coefficients to zero.  The foliation appears only through the constraint and through the cosmological transition potential, and both vanish in the local limit in Eq.~\eqref{eq:local_limit_conditions}.  Thus the theory maps to GR for Shapiro delay, light deflection, perihelion precession, and binary-pulsar damping at the order tested by the standard PPN expansion.
+
+Physical-frame causality is satisfied in the same branch because matter, photons, and gravitons share the same metric cone; Eq.~\eqref{eq:tensor_conditions_complete} gives $c_T=1$, and the canonical transition fluctuation has $c_\chi=1$.  The rigid clock constraint is instantaneous only as a nondynamical elliptic constraint on the foliation, like the lapse constraint in GR; it is not a propagating superluminal signal.  If the finite regulator in Eq.~\eqref{eq:regulatorquad} is activated, physical-frame causality requires
+\begin{equation}
+  0<c_X^2\le1,
+  \qquad
+  0<c_\chi^2\le1,
+  \qquad
+  c_T^2=1.
+  \label{eq:causality_conditions}
+\end{equation}
+
+\section{Nondegenerate redshift-drift/growth/lensing prediction}
+\label{sec:nondegenerate_prediction_completion}
+
+A background-only reconstruction can always define an effective $w_{\rm eff}(z)$, so the clock theory must be tested by a closure relation rather than by $H(z)$ alone.  The minimal branch predicts three linked statements:
+\begin{equation}
+  E(a)=E_E(a)^{1/[1+n(a)]},
+  \qquad
+  \mu(a,k)=1,
+  \qquad
+  \Sigma(a,k)=1
+  \label{eq:three_predictions}
+\end{equation}
+up to the heavy-field corrections in Eq.~\eqref{eq:mu_gamma_sigma_result}.  Redshift drift directly measures
+\begin{equation}
+  E_{\rm drift}(z)=(1+z)\left[1-\frac{\Delta v(z)}{cH_0\Delta t_0}\right].
+  \label{eq:E_from_drift}
+\end{equation}
+Given $\Omega_{m0}$, $\Omega_{r0}$, and $H_0$ from the early-calibrated sector, the observed clock index is
+\begin{equation}
+  n_{\rm obs}(a)=\frac{\ln E_E(a)}{\ln E_{\rm drift}(a)}-1 .
+  \label{eq:nobs_from_drift}
+\end{equation}
+For the logistic transition, the first closure relation is
+\begin{equation}
+  \boxed{
+  {\cal T}(a)\equiv
+  \frac{\dd}{\dd\ln a}\ln\left[\frac{n_{\rm obs}(a)}{n_0-n_{\rm obs}(a)}\right]-\beta=0 .}
+  \label{eq:Tclosure}
+\end{equation}
+For the covariant expansion-triggered form, the equivalent relation is
+\begin{equation}
+  \boxed{
+  {\cal T}_\Theta(a)\equiv
+  \frac{\dd}{\dd\ln\Theta}\ln\left[\frac{n_{\rm obs}}{n_0-n_{\rm obs}}\right]+p=0 .}
+  \label{eq:Ttheta_closure}
+\end{equation}
+This is not a generic $w_0w_a$ statement.  A CPL model has $w(a)=w_0+w_a(1-a)$ and therefore imposes a different two-parameter differential form on $E(a)$.  It can match the clock branch at a small number of redshifts, but it cannot satisfy Eq.~\eqref{eq:Tclosure} over a continuous interval unless its parameters accidentally reproduce the same transition curve.
+
+The second closure relation uses growth.  From observed $f\sigma_8$ one reconstructs $D(a)$ up to the normalization $\sigma_{8,0}$.  The minimal clock branch requires
+\begin{equation}
+  \boxed{
+  {\cal G}(a,k)\equiv
+  D''_x+\left[2+\frac{\dd\ln E}{\dd\ln a}\right]D'_x
+  -\frac32\frac{\Omega_{m0}a^{-3}}{E^2(a)}D=0 .}
+  \label{eq:Gclosure}
+\end{equation}
+The third closure relation uses lensing:
+\begin{equation}
+  \boxed{
+  {\cal L}(a,k)\equiv \Sigma(a,k)-1=0,
+  \qquad
+  {\cal S}(a,k)\equiv\gamma(a,k)-1=0 .}
+  \label{eq:Lclosure}
+\end{equation}
+The falsifiable prediction is the joint null test
+\begin{equation}
+  \boxed{
+  \left\{{\cal T},{\cal G},{\cal L},{\cal S}\right\}=\{0,0,0,0\}}
+  \label{eq:jointclosure}
+\end{equation}
+with one common parameter set $(n_0,z_t,\beta,\Omega_{m0},H_0,\sigma_{8,0})$.  A flexible EFT dark-energy parametrization can imitate this only by setting $\alpha_T=\alpha_M=\alpha_B=0$, suppressing scalar clustering, and imposing the same clock-transition differential equation on its background.  At that point it is no longer a generic EFT fit; it has been restricted to the clock submanifold.
+
+A practical observable version is the $E_G$ statistic,
+\begin{equation}
+  E_G(a,k)=\frac{\Omega_{m0}\Sigma(a,k)}{f(a,k)},
+  \qquad
+  f\equiv\frac{\dd\ln D}{\dd\ln a} .
+  \label{eq:EG_prediction}
+\end{equation}
+The clock branch predicts
+\begin{equation}
+  E_G^{\rm TIP}(a,k)=\frac{\Omega_{m0}}{f_{\rm TIP}(a)},
+  \label{eq:EG_TIP}
+\end{equation}
+where $f_{\rm TIP}$ is obtained from Eq.~\eqref{eq:Gclosure} using the same $E(a)$ that enters redshift drift.  Thus redshift drift fixes $E(a)$, growth fixes $f(a)$, and lensing fixes $\Sigma(a,k)$; the theory is falsified if these three measurements cannot be made consistent with Eqs.~\eqref{eq:Tclosure}--\eqref{eq:Lclosure}.
+
+\section{Implementation checklist for the later likelihood paper}
+\label{sec:implementation_checklist_completion}
+
+The following table is the exact handoff to the eventual public likelihood pipeline.  It separates what is completed analytically here from what must be sampled with real data.
+\begin{table*}[t]
+\footnotesize
+\caption{Theory-side implementation checklist.  The public CMB/BAO/SN/growth/lensing likelihood pipeline is intentionally not included in this manuscript.}
+\begin{ruledtabular}
+\begin{tabular}{lll}
+Module & Equations to implement & Stability/local cut \\
+\hline
+Background & Eqs.~\eqref{eq:nprime_code}--\eqref{eq:Eprime_code} & $n_{\rm BBN}|\ln E_E|\ll10^{-2}$, $n_*|\ln E_E|\ll10^{-3}$ \\
+Scalar perturbations & Eqs.~\eqref{eq:fluid_delta}--\eqref{eq:growth_complete_x} & $Z_\chi>0$, $M_{\chi,\rm eff}^2>-9H^2/4$, $C_X=0$ \\
+Growth functions & Eqs.~\eqref{eq:mu_complete}--\eqref{eq:mu_gamma_sigma_result} & $|\mu-1|$, $|\gamma-1|$, $|\Sigma-1|$ within lensing/RSD bounds \\
+Tensor sector & Eqs.~\eqref{eq:tensor_action_complete}--\eqref{eq:gw_lum_distance} & $Q_T>0$, $c_T=1$, $d_L^{\rm GW}=d_L^{\rm EM}$ \\
+Local tests & Eqs.~\eqref{eq:local_limit_conditions}--\eqref{eq:PPN_results} & $\gamma_{\rm PPN}=\beta_{\rm PPN}=1$, $\alpha_1=\alpha_2=0$ \\
+Nondegenerate test & Eqs.~\eqref{eq:Tclosure}--\eqref{eq:jointclosure} & one common parameter set for drift, growth, and lensing \\
+\end{tabular}
+\end{ruledtabular}
+\label{tab:implementation_checklist}
+\end{table*}
+
+The result is an analytically specified transition-clock branch with a defined background, linear-growth sector, stability criteria, local-limit assumptions, and observational closure tests.  Its empirical status still depends on the data analysis deferred in this paper: posterior sampling against CMB, BAO, SN, RSD, weak lensing, and CMB lensing, with comparison to \LCDM{}, $w$CDM, $w_0w_a$CDM, early dark energy, and EFT dark-energy baselines.
+
+\section{CAMB Boltzmann implementation benchmark}
+\label{sec:camb-boltzmann-benchmark}
+
+This section records the first numerical Boltzmann implementation benchmark for the transition-clock branch. The calculation is not yet a native CLASS/CAMB modification of the clock constraint. Instead, the clock-dressed background is mapped into a tabulated effective equation of state and evolved with the CAMB PPF dark-energy module. It is therefore a reproducible Boltzmann smoke test of the background and linear-observable consequences, not a final clock-field likelihood.
+
+The implementation uses
+\begin{equation}
+ n(a)=\frac{n_0}{1+(a_t/a)^\beta}
+\end{equation}
+and the normalized benchmark background
+\begin{equation}
+ E_{\rm TIP}(a)=
+ \frac{\left[\Omega_m a^{-3}+\Omega_r a^{-4}\right]^{1/[2(1+n(a))]}}
+ {\left[\Omega_m+\Omega_r\right]^{1/[2(1+n(1))]}} .
+\end{equation}
+For the TIP run, the effective density
+\begin{equation}
+ \Omega_{\rm eff}(a)=E_{\rm TIP}^2(a)-\Omega_m a^{-3}-\Omega_r a^{-4}
+\end{equation}
+is converted to
+\begin{equation}
+ w_{\rm eff}(a)=-1-\frac{1}{3}\frac{d\ln\Omega_{\rm eff}}{d\ln a},
+\end{equation}
+then passed to \texttt{camb.dark\_energy.DarkEnergyPPF}. The baseline run is standard flat $\Lambda$CDM.
+
+The code outputs
+\begin{equation}
+ C_\ell^{TT},\quad C_\ell^{TE},\quad C_\ell^{EE},\quad C_L^{\phi\phi},\quad
+ P(k,z),\quad f\sigma_8(z),\quad D_M/r_d,\quad D_H/r_d .
+\end{equation}
+The scripts and machine-readable results are included in the repository under \texttt{boltzmann/}.
+
+\begin{table}[t]
+\caption{CAMB implementation benchmark. The TIP row is the effective-PPF mapping of the transition-clock background, not a native clock-constraint Boltzmann hierarchy.}
+\label{tab:camb-implementation-benchmark}
+\begin{ruledtabular}
+\begin{tabular}{lcccccc}
+Model & $H_0$ & $\Omega_m$ & $r_d$ [Mpc] & $z_\ast$ & $100\theta_\ast$ & Age [Gyr]\\
+\hline
+TIP effective PPF & 65.545 & 0.084 & 88.13 & 1101.76 & 0.6661 & 13.231\\
+$\Lambda$CDM baseline & 67.218 & 0.275 & 152.17 & 1088.31 & 1.0201 & 14.341
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The main diagnostic result is that the run completes and produces all required Boltzmann observables. However, the effective-PPF TIP mapping shifts the drag sound horizon substantially relative to the earlier background proxy. This should be treated as a warning that the final paper needs a native perturbation implementation or an EFT/hi\_class mapping before claiming observational viability.
+
+
+\section{Discussion and conclusion}
+
+This paper delivers the disciplined version of the Duality of Time idea.  A lapse by itself is not physics.  A background acceleration curve by itself is not evidence against dark energy.  The constant-$n$ branch is useful only as an analytic demonstration, because the $n=1$ branch fails CMB geometry.  The viable theory is a covariant clock-field model with no independent Einstein-frame dark-energy stress tensor, a transition to GR before recombination, and non-background tests.  The imported DESI DR2 and supernova age-bias numbers sharpen the target: the transition branch must reproduce the DESI BAO distance table, the DESI-preferred effective $w_0>-1$, $w_a<0$ background behavior, and the same conclusions under plausible SN population-drift systematics.
+
+The main result is therefore precise: an independent dark-energy fluid is not required as a matter of principle to obtain accelerated matter-clock expansion.  The existence of dark energy as a physical substance is not proven by homogeneous expansion data alone, because the same $H(z)$ admits a clock-sector representation with $\Lambda_{\rm E}=0$.  To turn this no-necessity result into an observational replacement of \LCDM, one must complete the perturbation action, stability regions, PPN limits, Boltzmann implementation, and likelihood comparison to \LCDM, $w$CDM, $w_0w_a$CDM, and effective-field-theory dark-energy baselines.
+
+The next version of the program should therefore contain one public data pipeline and one nondegenerate prediction: a posterior for the transition clock model that fits CMB+BAO+SN+growth, keeps $c_T=1$, satisfies local preferred-frame limits, and predicts a redshift-drift/growth/lensing consistency relation outside the allowed region of smooth dark energy.  Until that is done, the result is best described not as the empirical death of dark energy, but as a covariant proof that dark energy is not logically forced by cosmic acceleration.
+
+\begin{acknowledgments}
+The author thanks collaborators and reviewers of earlier drafts for criticism that sharpened the distinction between coordinate lapse, physical clock field, and observable degeneracy.  This manuscript uses only analytic diagnostics.  No new observational likelihood chains are introduced.
+\end{acknowledgments}
+
+\appendix
+
+\section{Reciprocal scaling in the rigid branch}
+
+For dust in clock-field time,
+\begin{equation}
+  a(\Tc)\propto \Tc^{2/3},\qquad \Hc=\frac{2}{3\Tc} .
+\end{equation}
+The constant-$n$ TIP relation gives $H^{1+n}\propto\Hc$, hence
+\begin{equation}
+  H(\Tc)\propto\Tc^{-1/(1+n)} .
+\end{equation}
+Since $N=\Hc/H$,
+\begin{equation}
+  N(\Tc)\propto\Tc^{-n/(1+n)} .
+\end{equation}
+Integrating $\dd t=N\dd\Tc$ gives
+\begin{equation}
+  t\propto\Tc^{1/(1+n)},\qquad \Tc\propto t^{1+n} .
+\end{equation}
+Substitution into $a(\Tc)\propto\Tc^{2/3}$ recovers
+\begin{equation}
+  a(t)\propto t^{2(1+n)/3} .
+\end{equation}
+
+\section{Effective equation of state for the transition branch}
+
+For Eq.~\eqref{eq:transition},
+\begin{equation}
+  \frac{\dd n}{\dd\ln a}=\beta n\left(1-\frac{n}{n_0}\right).
+\end{equation}
+In the dust branch, $\dd\ln E_E/\dd\ln a=-3/2$.  Equation~\eqref{eq:dlnE} gives
+\begin{equation}
+  \frac{\dd\ln E}{\dd\ln a}
+  =-\frac{3}{2(1+n)}-
+  \frac{\ln E_E}{(1+n)^2}\beta n\left(1-\frac{n}{n_0}\right).
+\end{equation}
+The apparent reconstructed equation of state is
+\begin{equation}
+  w_{\rm eff}(a)=-1-\frac{2}{3}\frac{\dd\ln E}{\dd\ln a},
+\end{equation}
+which is useful for comparison but is not a physical dark-energy fluid in the clock-sector action.
+
+
+\clearpage
+\onecolumngrid
+\section{Completion addendum: explicit Hamiltonian matrix, scalar matrices, local PPN derivation, and benchmark forecasts}
+\label{app:completion_addendum}
+
+This addendum leaves the manuscript above unchanged and supplies the four explicit technical items needed for the theory-side completion of the minimal luminal, zero-charge clock branch. The branch treated here is the same one used in Secs.~\ref{sec:operational_completion}--\ref{sec:implementation_checklist_completion}: matter and photons are minimally coupled to the physical metric, $c_T=1$, the clock-current charge is set to zero, and the transition field is either heavy or has a positive canonical kinetic term. No public CMB/BAO/SN/RSD/lensing likelihood is added here.
+
+\subsection{ADM Hamiltonian, second-class matrix, and degree-of-freedom count}
+\label{app:explicit_hamiltonian_matrix}
+
+Work in unitary gauge $X=T$ and use the auxiliary first-order form of Eq.~\eqref{eq:firstorderaction}. Define
+\begin{equation}
+  A(\Theta,\chi)\equiv N_\star\left(\frac{\Theta}{3H_\star}\right)^{n(\chi)},
+  \qquad
+  F=\frac{A(\Theta,\chi)}{N} .
+\end{equation}
+The ADM metric is
+\begin{equation}
+  \dd s^2=-N^2\dd T^2+h_{ij}(\dd x^i+N^i\dd T)(\dd x^j+N^j\dd T),
+\end{equation}
+with
+\begin{equation}
+  K_{ij}=\frac{1}{2N}\left(\dot h_{ij}-D_iN_j-D_jN_i\right),\qquad K=h^{ij}K_{ij}.
+\end{equation}
+The auxiliary action contains $\sigma(\Theta-K)$. Hence the momentum conjugate to $h_{ij}$ is shifted by the auxiliary multiplier,
+\begin{equation}
+  \pi^{ij}=\sqrt h\,\mpl^2\left(K^{ij}-Kh^{ij}\right)-\frac{1}{2}\sqrt h\,\sigma h^{ij},
+  \qquad
+  p_\chi=\sqrt h\,Z_\chi\chi_\perp,
+  \label{eq:pi_shift_explicit}
+\end{equation}
+where $\chi_\perp=N^{-1}(\dot\chi-N^iD_i\chi)$. It is useful to define
+\begin{equation}
+  \Pi^{ij}\equiv \pi^{ij}+\frac{1}{2}\sqrt h\,\sigma h^{ij},
+  \qquad
+  \Pi=h_{ij}\Pi^{ij}=\pi+\frac{3}{2}\sqrt h\,\sigma .
+\end{equation}
+Then
+\begin{equation}
+  K^{ij}=\frac{1}{\sqrt h\,\mpl^2}\left(\Pi^{ij}-\frac{1}{2}\Pi h^{ij}\right),
+  \qquad
+  K=-\frac{\Pi}{2\sqrt h\,\mpl^2}.
+  \label{eq:K_inverted_explicit}
+\end{equation}
+The canonical Hamiltonian can be written as
+\begin{equation}
+  H=\int\dd^3x\left\{N\left[\mathcal H_0+\sqrt h\left(\lambda-\sigma\Theta+U\right)\right]+N^i\mathcal H_i-\sqrt h\,\lambda A\right\}+H_{\rm prim},
+  \label{eq:H_canonical_explicit}
+\end{equation}
+where
+\begin{align}
+  \mathcal H_0={}&\frac{1}{\sqrt h\,\mpl^2}\left(\Pi_{ij}\Pi^{ij}-\frac{1}{2}\Pi^2\right)-\frac{\mpl^2\sqrt h}{2}\,{}^{(3)}R
+  +\frac{p_\chi^2}{2\sqrt h\,Z_\chi}+\frac{\sqrt h Z_\chi}{2}D_i\chi D^i\chi+\mathcal H_m+\mathcal H_r,
+  \label{eq:H0_explicit}\\
+  \mathcal H_i={}&-2h_{ij}D_k\pi^{jk}+p_\chi D_i\chi+p_ND_iN+p_\lambda D_i\lambda+p_\sigma D_i\sigma+p_\Theta D_i\Theta+\mathcal H_{i,m}+\mathcal H_{i,r} .
+  \label{eq:Hi_explicit}
+\end{align}
+The primary constraints are
+\begin{equation}
+  p_N\approx0,\quad p_i\approx0,\qquad p_\lambda\approx0,\qquad p_\sigma\approx0,\qquad p_\Theta\approx0 .
+\end{equation}
+Preserving $p_N,p_\lambda,p_\sigma,p_\Theta$ gives the four scalar secondary constraints
+\begin{align}
+  c_N&\equiv \frac{\mathcal H_0}{\sqrt h}+\lambda-\sigma\Theta+U\approx0,
+  \label{eq:cN_explicit}\\
+  c_\lambda&\equiv N-A(\Theta,\chi)\approx0,
+  \label{eq:clambda_explicit}\\
+  c_\sigma&\equiv \Theta-K
+  =\Theta+\frac{\pi+\frac{3}{2}\sqrt h\,\sigma}{2\sqrt h\,\mpl^2}\approx0,
+  \label{eq:csigma_explicit}\\
+  c_\Theta&\equiv \lambda A_\Theta+N\sigma-NU_\Theta\approx0,
+  \label{eq:ctheta_explicit}
+\end{align}
+where $A_\Theta\equiv\partial A/\partial\Theta$ and $U_\Theta\equiv\partial U/\partial\Theta$. The TIP condition is Eq.~\eqref{eq:clambda_explicit}; Eq.~\eqref{eq:csigma_explicit} enforces $\Theta=K$; Eq.~\eqref{eq:ctheta_explicit} is the explicit version of $\sigma=U_\Theta-\lambda F_\Theta$ after using $A=NF$.
+
+The nontrivial second-class part of the Dirac matrix is obtained from the eight constraints
+\begin{equation}
+  \Phi_A=(p_N,p_\lambda,p_\sigma,p_\Theta;c_N,c_\lambda,c_\sigma,c_\Theta).
+\end{equation}
+With the convention $\{q(x),p_q(y)\}=\delta^3(x-y)$,
+\begin{equation}
+  \Omega_{AB}(x,y)\equiv\{\Phi_A(x),\Phi_B(y)\}
+  =\begin{pmatrix}
+    0&\mathcal P\\
+    -\mathcal P^T&\mathcal S
+  \end{pmatrix}\delta^3(x-y)+\hbox{spatial-derivative terms},
+  \label{eq:dirac_matrix_block}
+\end{equation}
+where $\mathcal S$ contains the secondary-secondary brackets. The determinant of the full matrix is controlled by the primary-secondary block $\mathcal P$:
+\begin{equation}
+  \mathcal P_{a b}=\{(p_N,p_\lambda,p_\sigma,p_\Theta)_a,(c_N,c_\lambda,c_\sigma,c_\Theta)_b\}
+  =
+  \begin{pmatrix}
+    0 & -1 & 0 & U_\Theta-\sigma \\
+    -1 & 0 & 0 & -A_\Theta \\
+    \Theta & 0 & -\dfrac{3}{4\mpl^2} & -N \\
+    \sigma-U_\Theta & A_\Theta & -1 & NU_{\Theta\Theta}-\lambda A_{\Theta\Theta}
+  \end{pmatrix} .
+  \label{eq:P_matrix_explicit}
+\end{equation}
+This is the explicit Poisson matrix for the lapse--TIP--auxiliary sector. Its determinant is
+\begin{equation}
+  \det\mathcal P
+  =N+A_\Theta\Theta+\frac{3N}{4\mpl^2}U_{\Theta\Theta}
+  +\frac{3A_\Theta}{2\mpl^2}(U_\Theta-\sigma)
+  -\frac{3\lambda}{4\mpl^2}A_{\Theta\Theta} .
+  \label{eq:P_determinant_explicit}
+\end{equation}
+On the zero-charge background and its linearized branch, $\lambda=0$ and Eq.~\eqref{eq:ctheta_explicit} gives $\sigma=U_\Theta$. Using $A=N$ and $A_\Theta\Theta=nN$ on the TIP surface gives
+\begin{equation}
+  \left.\det\mathcal P\right|_{C_X=0}
+  =N\left(1+n+\frac{3}{4\mpl^2}U_{\Theta\Theta}\right).
+  \label{eq:P_determinant_branch}
+\end{equation}
+Thus the second-class matrix is nonsingular for positive lapse and for the open parameter domain
+\begin{equation}
+  1+n+\frac{3}{4\mpl^2}U_{\Theta\Theta}\ne0 .
+\end{equation}
+For the minimal attractor branch, $U_{\Theta\Theta}\ge0$ and $n>-1$, so the lapse is fixed algebraically and cannot propagate as an Ostrogradsky scalar. Equation~\eqref{eq:P_determinant_branch} is the Hamiltonian version of the simpler Lagrangian statement that the total lapse derivative of the eliminated TIP constraint is proportional to $-(1+n)/N$.
+
+The spatial constraints remain first class. Smeared with a vector field $\xi^i$,
+\begin{align}
+  H_i[\xi]&\equiv\int\dd^3x\,\xi^i\mathcal H_i,\\
+  \{H_i[\xi],H_j[\eta]\}&=H_i[\mathcal L_\xi\eta]^i,\\
+  \{H_i[\xi],\Phi_A[f]\}&=\Phi_A[\mathcal L_\xi f] .
+\end{align}
+The Hamiltonian generator is not an additional first-class constraint after the unitary-gauge clock slicing is imposed; it is paired with the clock/lapse constraints in Eq.~\eqref{eq:dirac_matrix_block}. The phase-space interpretation is therefore transparent: $N$, $\lambda$, $\sigma$, and $\Theta$ are removed by the eight second-class constraints above; $N^i$ and $\mathcal H_i$ remove the usual spatial-gauge sector; the zero-current condition $C_X=0$ removes the mimetic-dust integration constant. The minimal branch propagates the two tensor polarizations, plus the transition scalar only when $Z_\chi$ is finite:
+\begin{equation}
+  N_{\rm dof}=2+\begin{cases}
+  0, & Z_\chi=0\;\hbox{or}\;M_\chi^2/H^2\rightarrow\infty,\\
+  1, & Z_\chi>0\;\hbox{finite}.
+  \end{cases}
+  \label{eq:dof_count_explicit_addendum}
+\end{equation}
+A nonzero conserved clock charge would add the familiar mimetic-dust-like scalar component and is outside the no-hidden-density branch.
+
+\subsection{Expanded scalar quadratic-action matrices in the minimal branch}
+\label{app:expanded_scalar_matrices}
+
+The previous sections gave the scalar action structurally. Here the normalization is fixed and the matrices are written explicitly for the same restricted branch used above. The assumptions are
+\begin{equation}
+  C_X=0,
+  \qquad \lambda=0,
+  \qquad \sigma=U_\Theta,
+  \qquad \frac{Z_\chi\dot\chi^2}{\mpl^2H^2}\ll1,
+  \qquad \frac{H^2}{M_\chi^2}\ll1
+\end{equation}
+except where the finite transition scalar is deliberately retained. The clock constraint then contributes no independent propagating scalar. Matter and radiation keep their standard gauge-invariant perturbations, while the only clock-sector scalar retained in the action is
+\begin{equation}
+  Q_\chi\equiv\delta\chi-\frac{\dot\chi}{H}\zeta .
+\end{equation}
+For a Boltzmann implementation it is better to leave dust and radiation in their usual fluid variables and use the scalar action only for the non-fluid transition mode. For completeness, introduce regulated perfect-fluid displacement variables $s_m$ and $s_r$ with sound speeds $c_m^2$ and $c_r^2=1/3$, taking $c_m^2\rightarrow0^+$ only after variation. Define
+\begin{equation}
+  Q_A^{\rm fl}\equiv\frac{\rho_A+p_A}{c_A^2},
+  \qquad A=m,r,
+  \label{eq:Qfluid_def}
+\end{equation}
+so that the dust limit is a constrained, pressureless limit rather than a propagating acoustic wave. In the variable basis
+\begin{equation}
+  \bm q=(s_m,s_r,Q_\chi)^T,
+\end{equation}
+with lapse and shift already solved by Eqs.~\eqref{eq:P_matrix_explicit}--\eqref{eq:P_determinant_branch}, the reduced scalar action is
+\begin{equation}
+  S_s^{(2)}=\frac12\int\dd t\frac{\dd^3k}{(2\pi)^3}a^3
+  \left[\dot{\bm q}^{\,T}K\dot{\bm q}
+  -\frac{k^2}{a^2}\bm q^{T}G\bm q
+  -\bm q^TM\bm q\right].
+  \label{eq:expanded_KGM_action}
+\end{equation}
+The kinetic and gradient matrices are
+\begin{equation}
+  K=\begin{pmatrix}
+  Q_m^{\rm fl} & 0 & 0\\
+  0 & Q_r^{\rm fl} & 0\\
+  0 & 0 & Z_\chi
+  \end{pmatrix},
+  \qquad
+  G=\begin{pmatrix}
+  c_m^2Q_m^{\rm fl} & 0 & 0\\
+  0 & c_r^2Q_r^{\rm fl} & 0\\
+  0 & 0 & Z_\chi
+  \end{pmatrix} .
+  \label{eq:expanded_KG_matrices}
+\end{equation}
+The mass/mixing matrix can be separated into the standard gravitational Jeans block plus the transition block,
+\begin{equation}
+  M=M_{\rm grav}+M_\chi+M_{\rm mix} .
+\end{equation}
+The standard GR fluid block is equivalently defined by the second-order growth system
+\begin{equation}
+  \ddot\Delta_A+2H\dot\Delta_A+\frac{c_A^2k^2}{a^2}\Delta_A
+  -4\pi G\sum_B(1+w_A)(1+3c_B^2)\rho_B\Delta_B=0,
+  \label{eq:growth_system_from_matrix}
+\end{equation}
+which corresponds to the density-space matrix
+\begin{equation}
+  (M_{\Delta})_{AB}=\frac{c_A^2k^2}{a^2}\delta_{AB}
+  -4\pi G(1+w_A)(1+3c_B^2)\rho_B .
+  \label{eq:Mdensity_block}
+\end{equation}
+For cold matter $w_m=0$ and $c_m^2\rightarrow0$; for radiation $w_r=c_r^2=1/3$. The transition scalar entries are
+\begin{align}
+  (M_\chi)_{33}&=Z_\chi M_{\chi,\rm red}^2,
+  \label{eq:Mchi_entry}\\
+  M_{\chi,\rm red}^2&=\frac{1}{Z_\chi}\left(U_{\chi\chi}-\lambda F_{\chi\chi}\right)
+  -\frac{1}{a^3\mpl^2}\frac{\dd}{\dd t}\left(\frac{a^3Z_\chi\dot\chi^2}{H}\right)
+  +O(C_X),
+  \label{eq:Mchi_reduced_explicit}
+\end{align}
+and the off-diagonal fluid--transition entries are
+\begin{equation}
+  (M_{\rm mix})_{A3}=(M_{\rm mix})_{3A}
+  =-\frac{\dot\chi}{H\mpl^2}(\rho_A+p_A)
+  -\frac{n_\chi\ln(\Theta/3H_\star)}{1+n+3U_{\Theta\Theta}/(4\mpl^2)}(\rho_A+p_A)+O\left(\frac{H^2}{M_\chi^2},C_X\right).
+  \label{eq:Mmix_explicit}
+\end{equation}
+Equations~\eqref{eq:expanded_KG_matrices}--\eqref{eq:Mmix_explicit} are the expanded $K$, $G$, and $M$ matrices for the branch used in this paper. In the strict minimal forecast limit, $\dot\chi=0$, $n_\chi\delta\chi=0$, $M_\chi^2/H^2\rightarrow\infty$, and $C_X=0$, so
+\begin{equation}
+  M_{A3}=0,
+  \qquad
+  K_{33}=Z_\chi>0,
+  \qquad
+  G_{33}=Z_\chi>0,
+  \qquad
+  M_{33}=Z_\chi M_\chi^2>0 .
+  \label{eq:minimal_matrix_limit}
+\end{equation}
+The stability conditions are therefore not schematic:
+\begin{equation}
+  Q_A^{\rm fl}>0,
+  \qquad c_A^2\ge0,
+  \qquad Z_\chi>0,
+  \qquad M_{\chi,\rm red}^2>-\frac94H^2,
+  \label{eq:expanded_stability_conditions}
+\end{equation}
+with the dust case interpreted as the controlled $c_m^2\rightarrow0^+$ constrained limit. The determinant of the kinetic matrix is
+\begin{equation}
+  \det K=Q_m^{\rm fl}Q_r^{\rm fl}Z_\chi,
+\end{equation}
+so there is no scalar ghost in the stated domain. The principal gradient eigenvalues are $c_m^2$, $1/3$, and $1$.
+
+For the late-time cold-matter observables used below, the action matrices reduce exactly to the two code equations already displayed in the main text:
+\begin{equation}
+  D_x''+\left[2+\frac{\dd\ln E}{\dd\ln a}\right]D_x'
+  -\frac32\frac{\Omega_{m0}a^{-3}}{E^2(a)}D=0,
+  \qquad \Sigma=1,
+  \qquad \gamma=1,
+  \label{eq:late_growth_from_expanded_matrices}
+\end{equation}
+up to the heavy-field corrections in Eq.~\eqref{eq:mu_gamma_sigma_result}.
+
+\subsection{Weak-field and PPN derivation}
+\label{app:explicit_ppn_derivation}
+
+The local derivation is made in the physical metric because matter, photons, and gravitons follow that metric in the luminal branch. In a solar-system region, impose the local attractor
+\begin{equation}
+  n_{\rm loc}=0,
+  \qquad
+  \lambda_{\rm loc}=0,
+  \qquad
+  \sigma_{\rm loc}=0,
+  \qquad
+  \chi=\chi_{\rm loc}+\delta\chi,
+  \qquad
+  M_\chi r_{\rm SS}\gg1 .
+  \label{eq:local_attractor_ppn_addendum}
+\end{equation}
+The local action through post-Newtonian order is then
+\begin{equation}
+  S_{\rm local}=\frac{\mpl^2}{2}\int\dd^4x\sqrt{-g}R+S_m[\psi_m,g_{\mu\nu}]
+  -\frac{Z_\chi}{2}\int\dd^4x\sqrt{-g}\left[(\nabla\delta\chi)^2+M_\chi^2\delta\chi^2\right]+O(H_0^2r_{\rm SS}^2).
+  \label{eq:local_action_ppn_addendum}
+\end{equation}
+There is no direct matter source for $\delta\chi$ in this branch. The scalar equation is therefore
+\begin{equation}
+  (\nabla^2-M_\chi^2)\delta\chi=0
+  \label{eq:local_scalar_yukawa_homogeneous}
+\end{equation}
+for a quasi-static isolated system. With regularity at the source and $\delta\chi\rightarrow0$ at the boundary of the local patch,
+\begin{equation}
+  \delta\chi=0+O(e^{-M_\chi r_{\rm SS}}).
+\end{equation}
+Thus the scalar stress tensor is beyond PPN order in the local patch. The metric field equation becomes
+\begin{equation}
+  G_{\mu\nu}=8\pi G T_{\mu\nu}^{m}+O(H_0^2r_{\rm SS}^2,e^{-M_\chi r_{\rm SS}}).
+  \label{eq:local_Einstein_ppn}
+\end{equation}
+Use the standard PPN expansion
+\begin{align}
+  g_{00}&=-1+2U-2\beta_{\rm PPN}U^2+O(v^6),\\
+  g_{0i}&=-\frac12(4\gamma_{\rm PPN}+3+\alpha_1-\alpha_2)V_i
+          -\frac12(1+\alpha_2)W_i+O(v^5),\\
+  g_{ij}&=(1+2\gamma_{\rm PPN}U)\delta_{ij}+O(v^4),
+\end{align}
+where
+\begin{equation}
+  \nabla^2U=-4\pi G\rho .
+\end{equation}
+Equation~\eqref{eq:local_Einstein_ppn} gives the same Poisson equations for $U$, $V_i$, $W_i$, and the second-order scalar potentials as general relativity. Since the branch contains no independent vector kinetic terms for $u_\mu$ and no nonminimal matter coupling, there is no preferred-frame vector source at order $v^3$. Matching the coefficients gives
+\begin{equation}
+  \boxed{\gamma_{\rm PPN}=1,
+  \qquad
+  \beta_{\rm PPN}=1,
+  \qquad
+  \alpha_1=0,
+  \qquad
+  \alpha_2=0}
+  \label{eq:PPN_box_addendum}
+\end{equation}
+up to corrections of order
+\begin{equation}
+  O(H_0^2r_{\rm SS}^2),
+  \qquad O(e^{-M_\chi r_{\rm SS}}),
+  \qquad O(\beta_\chi^2e^{-M_\chi r_{\rm SS}})
+\end{equation}
+if a nonminimal scalar-matter coupling $\beta_\chi$ is added outside the minimal branch. This derivation is the local weak-field result, not merely a branch assertion: the extra fields either vanish by their own local equations or are algebraic constraints with zero local charge.
+
+\subsection{Quantitative drift, growth, and lensing benchmark table}
+\label{app:forecast_table_addendum}
+
+This final item is a forecast-side diagnostic, not a likelihood. It uses the same minimal closure relation as Sec.~\ref{sec:nondegenerate_prediction_completion}:
+\begin{equation}
+  \mu(a,k)=1,
+  \qquad
+  \gamma(a,k)=1,
+  \qquad
+  \Sigma(a,k)=1 .
+\end{equation}
+For a normalized transition benchmark, take
+\begin{equation}
+  n_0=0.8,
+  \qquad
+  z_t=1,
+  \qquad
+  \beta=6,
+  \qquad
+  \Omega_{m0}=0.315,
+  \qquad
+  \Omega_{r0}=9.2\times10^{-5},
+  \qquad
+  H_0=67.4\,\kmsMpc .
+\end{equation}
+The background curve used for the table is normalized to $E(0)=1$:
+\begin{equation}
+  E_{\rm TIP}(a)=\frac{\left(\Omega_{m0}a^{-3}+\Omega_{r0}a^{-4}\right)^{1/[2(1+n(a))]}}
+  {\left(\Omega_{m0}+\Omega_{r0}\right)^{1/[2(1+n(1))]}} .
+  \label{eq:normalized_forecast_E}
+\end{equation}
+Growth is computed from Eq.~\eqref{eq:late_growth_from_expanded_matrices}, normalized to $D(1)=1$, with $\sigma_{8,0}=0.811$. The redshift-drift velocity shift uses a 20 yr observer baseline,
+\begin{equation}
+  \Delta v=c\Delta t_0H_0\left[1-\frac{E(z)}{1+z}\right].
+\end{equation}
+The lensing prediction is displayed through $E_G=\Omega_{m0}\Sigma/f=\Omega_{m0}/f$.
+
+\begin{table}[t]
+\footnotesize
+\caption{Benchmark non-likelihood predictions for the minimal clock branch in Eq.~\eqref{eq:normalized_forecast_E}, compared with flat \LCDM{} using the same $\Omega_{m0}$, $\Omega_{r0}$, $H_0$, and $\sigma_{8,0}$. The entries are meant as a reproducible forecast table for redshift drift, growth, and lensing closure, not as posterior means.}
+\begin{ruledtabular}
+\begin{tabular}{lcccccc}
+Model and redshift & $E(z)$ & $\Delta v_{20\,{\rm yr}}$ [cm/s] & $D(z)$ & $f(z)$ & $f\sigma_8(z)$ & $E_G(z)$ \\
+\hline
+\LCDM, $z=0$   & 1.000 & 0.00   & 1.000 & 0.527 & 0.427 & 0.598 \\
+\LCDM, $z=0.5$ & 1.322 & 4.90   & 0.769 & 0.761 & 0.474 & 0.414 \\
+\LCDM, $z=1$   & 1.791 & 4.33   & 0.607 & 0.876 & 0.431 & 0.359 \\
+\LCDM, $z=2$   & 3.033 & -0.45  & 0.417 & 0.958 & 0.324 & 0.329 \\
+\LCDM, $z=3$   & 4.568 & -5.87  & 0.316 & 0.981 & 0.251 & 0.321 \\
+\LCDM, $z=4$   & 6.334 & -11.03 & 0.253 & 0.990 & 0.203 & 0.318 \\
+Clock, $z=0$   & 1.000 & 0.00   & 1.000 & 0.516 & 0.419 & 0.610 \\
+Clock, $z=0.5$ & 1.407 & 2.57   & 0.783 & 0.693 & 0.440 & 0.455 \\
+Clock, $z=1$   & 1.922 & 1.61   & 0.632 & 0.781 & 0.400 & 0.404 \\
+Clock, $z=2$   & 3.777 & -10.70 & 0.464 & 0.720 & 0.271 & 0.438 \\
+Clock, $z=3$   & 6.093 & -21.63 & 0.380 & 0.684 & 0.211 & 0.461 \\
+Clock, $z=4$   & 8.622 & -29.94 & 0.327 & 0.675 & 0.179 & 0.467 \\
+\end{tabular}
+\end{ruledtabular}
+\label{tab:drift_growth_lensing_forecast_addendum}
+\end{table}
+
+The table gives the promised nondegenerate diagnostic. Redshift drift fixes $E(z)$ directly; growth fixes $f\sigma_8$ through the same $E(z)$; weak lensing fixes $\Sigma=1$ and hence $E_G=\Omega_{m0}/f$. A smooth $w_0w_a$ fit can reproduce a similar background at selected redshifts, but it does not automatically satisfy the common closure set
+\begin{equation}
+  E(z)\;\hbox{from drift},
+  \qquad
+  D(z)\;\hbox{from Eq.~\eqref{eq:late_growth_from_expanded_matrices}},
+  \qquad
+  \Sigma=1,
+  \qquad
+  \gamma=1
+\end{equation}
+with one transition curve $n(a)$.
+
+\begin{thebibliography}{99}
+
+\bibitem{Planck2018}
+N.~Aghanim \emph{et al.} (Planck Collaboration), ``Planck 2018 results. VI. Cosmological parameters,'' Astron. Astrophys. \textbf{641}, A6 (2020).
+
+\bibitem{DESIDR2}
+M.~Abdul Karim \emph{et al.} (DESI Collaboration), ``DESI DR2 results. II. Measurements of baryon acoustic oscillations and cosmological constraints,'' Phys. Rev. D \textbf{112}, 083515 (2025), doi:\href{https://doi.org/10.1103/tr6y-kpc6}{10.1103/tr6y-kpc6}; arXiv:2503.14738 [astro-ph.CO].
+
+\bibitem{DESIExtended}
+K.~Lodha \emph{et al.} (DESI Collaboration), ``Extended dark energy analysis using DESI DR2 BAO measurements,'' Phys. Rev. D \textbf{112}, 083511 (2025), doi:\href{https://doi.org/10.1103/w4c6-1r5j}{10.1103/w4c6-1r5j}; arXiv:2503.14743 [astro-ph.CO].
+
+\bibitem{Son2025}
+J.~Son, Y.-W.~Lee, C.~Chung, S.~Park, and H.~Cho, ``Strong progenitor age bias in supernova cosmology. II. Alignment with DESI BAO and signs of a non-accelerating universe,'' Mon. Not. R. Astron. Soc. \textbf{544}, 975--987 (2025), doi:\href{https://doi.org/10.1093/mnras/staf1685}{10.1093/mnras/staf1685}; arXiv:2510.13121 [astro-ph.CO].
+
+\bibitem{Brout2022}
+D.~Brout \emph{et al.}, ``The Pantheon+ analysis: Cosmological constraints,'' Astrophys. J. \textbf{938}, 110 (2022); arXiv:2202.04077.
+
+\bibitem{Sandage1962}
+A.~Sandage, ``The change of redshift and apparent luminosity of galaxies due to the deceleration of selected expanding universes,'' Astrophys. J. \textbf{136}, 319 (1962).
+
+\bibitem{Loeb1998}
+A.~Loeb, ``Direct measurement of cosmological parameters from the cosmic deceleration of extragalactic objects,'' Astrophys. J. Lett. \textbf{499}, L111 (1998).
+
+\bibitem{ADM1962}
+R.~Arnowitt, S.~Deser, and C.~W.~Misner, ``The dynamics of general relativity,'' in \emph{Gravitation: An Introduction to Current Research}, edited by L.~Witten (Wiley, New York, 1962); arXiv:gr-qc/0405109.
+
+\bibitem{JacobsonMattingly2001}
+T.~Jacobson and D.~Mattingly, ``Gravity with a dynamical preferred frame,'' Phys. Rev. D \textbf{64}, 024028 (2001).
+
+\bibitem{Afshordi2007}
+N.~Afshordi, D.~J.~H.~Chung, and G.~Geshnizjani, ``Cuscuton: A causal field theory with an infinite speed of sound,'' Phys. Rev. D \textbf{75}, 083513 (2007).
+
+\bibitem{Gubitosi2013}
+G.~Gubitosi, F.~Piazza, and F.~Vernizzi, ``The effective field theory of dark energy,'' JCAP \textbf{02}, 032 (2013).
+
+\bibitem{Bloomfield2013}
+J.~K.~Bloomfield, E.~E.~Flanagan, M.~Park, and S.~Watson, ``Dark energy or modified gravity? An effective field theory approach,'' JCAP \textbf{08}, 010 (2013).
+
+\bibitem{Abbott2017}
+B.~P.~Abbott \emph{et al.}, ``GW170817: Observation of gravitational waves from a binary neutron star inspiral,'' Phys. Rev. Lett. \textbf{119}, 161101 (2017).
+
+\bibitem{Baker2017}
+T.~Baker, E.~Bellini, P.~G.~Ferreira, M.~Lagos, J.~Noller, and I.~Sawicki, ``Strong constraints on cosmological gravity from GW170817 and GRB 170817A,'' Phys. Rev. Lett. \textbf{119}, 251301 (2017).
+
+\bibitem{Creminelli2017}
+P.~Creminelli and F.~Vernizzi, ``Dark energy after GW170817 and GRB170817A,'' Phys. Rev. Lett. \textbf{119}, 251302 (2017).
+
+\bibitem{Ezquiaga2017}
+J.~M.~Ezquiaga and M.~Zumalacarregui, ``Dark energy after GW170817: Dead ends and the road ahead,'' Phys. Rev. Lett. \textbf{119}, 251304 (2017).
+
+\bibitem{Will2014}
+C.~M.~Will, ``The confrontation between general relativity and experiment,'' Living Rev. Relativity \textbf{17}, 4 (2014).
+
+\bibitem{Henderson2026}
+J.~Henderson, ``Scale corrections to the $\Lambda$CDM model to explain a time-dependent dark energy density, and the Hubble and $S_8$ tensions,'' Preprints.org 202601.1548.v2 (2026), not peer reviewed.
+
+\bibitem{Weinberg1989}
+S.~Weinberg, ``The cosmological constant problem,'' Rev. Mod. Phys. \textbf{61}, 1 (1989).
+
+\end{thebibliography}
+
+\end{document}

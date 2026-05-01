@@ -1,0 +1,46 @@
+\section{CAMB Boltzmann implementation benchmark}
+\label{sec:camb-boltzmann-benchmark}
+
+This section records the first numerical Boltzmann implementation benchmark for the transition-clock branch. The calculation is not yet a native CLASS/CAMB modification of the clock constraint. Instead, the clock-dressed background is mapped into a tabulated effective equation of state and evolved with the CAMB PPF dark-energy module. It is therefore a reproducible Boltzmann smoke test of the background and linear-observable consequences, not a final clock-field likelihood.
+
+The implementation uses
+\begin{equation}
+ n(a)=\frac{n_0}{1+(a_t/a)^\beta}
+\end{equation}
+and the normalized benchmark background
+\begin{equation}
+ E_{\rm TIP}(a)=
+ \frac{\left[\Omega_m a^{-3}+\Omega_r a^{-4}\right]^{1/[2(1+n(a))]}}
+ {\left[\Omega_m+\Omega_r\right]^{1/[2(1+n(1))]}} .
+\end{equation}
+For the TIP run, the effective density
+\begin{equation}
+ \Omega_{\rm eff}(a)=E_{\rm TIP}^2(a)-\Omega_m a^{-3}-\Omega_r a^{-4}
+\end{equation}
+is converted to
+\begin{equation}
+ w_{\rm eff}(a)=-1-\frac{1}{3}\frac{d\ln\Omega_{\rm eff}}{d\ln a},
+\end{equation}
+then passed to \texttt{camb.dark\_energy.DarkEnergyPPF}. The baseline run is standard flat $\Lambda$CDM.
+
+The code outputs
+\begin{equation}
+ C_\ell^{TT},\quad C_\ell^{TE},\quad C_\ell^{EE},\quad C_L^{\phi\phi},\quad
+ P(k,z),\quad f\sigma_8(z),\quad D_M/r_d,\quad D_H/r_d .
+\end{equation}
+The scripts and machine-readable results are included in the repository under \texttt{boltzmann/}.
+
+\begin{table}[t]
+\caption{CAMB implementation benchmark. The TIP row is the effective-PPF mapping of the transition-clock background, not a native clock-constraint Boltzmann hierarchy.}
+\label{tab:camb-implementation-benchmark}
+\begin{ruledtabular}
+\begin{tabular}{lcccccc}
+Model & $H_0$ & $\Omega_m$ & $r_d$ [Mpc] & $z_\ast$ & $100\theta_\ast$ & Age [Gyr]\\
+\hline
+TIP effective PPF & 65.545 & 0.084 & 88.13 & 1101.76 & 0.6661 & 13.231\\
+$\Lambda$CDM baseline & 67.218 & 0.275 & 152.17 & 1088.31 & 1.0201 & 14.341
+\end{tabular}
+\end{ruledtabular}
+\end{table}
+
+The main diagnostic result is that the run completes and produces all required Boltzmann observables. However, the effective-PPF TIP mapping shifts the drag sound horizon substantially relative to the earlier background proxy. This should be treated as a warning that the final paper needs a native perturbation implementation or an EFT/hi\_class mapping before claiming observational viability.

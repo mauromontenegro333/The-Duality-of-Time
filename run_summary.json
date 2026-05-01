@@ -1,0 +1,110 @@
+[
+  {
+    "code": "CAMB",
+    "camb_version": "1.6.6",
+    "implementation": "tip_effective_ppf",
+    "mapping_warning": "TIP is run through a stock-CAMB PPF effective-background mapping. This is a Boltzmann run, but not a native clock-constraint Boltzmann modification.",
+    "config": {
+      "name": "tip_report_bestfit",
+      "kind": "tip_effective_ppf",
+      "H0": 65.545,
+      "Omega_m": 0.084,
+      "ombh2": 0.02237,
+      "tau": 0.0544,
+      "As": 2.1e-09,
+      "ns": 0.965,
+      "sigma8_norm_for_tables": 0.811,
+      "n0": 0.593,
+      "zt": 1.842,
+      "beta": 11.604,
+      "Omega_r_for_tip_background": 9.2e-05,
+      "lmax": 800,
+      "kmax": 2.0,
+      "npoints_pk": 220,
+      "amin_w_table": 1e-05,
+      "n_w_table": 500,
+      "lens_potential_accuracy": 0
+    },
+    "derived": {
+      "age": 13.230587963329794,
+      "zstar": 1101.7618437930003,
+      "rstar": 86.13119139773232,
+      "thetastar": 0.6660515580132267,
+      "DAstar": 12.931610227690797,
+      "zdrag": 1069.4102818433007,
+      "rdrag": 88.13186439181587,
+      "kd": 0.18645720158946386,
+      "thetad": 0.13029210624379406,
+      "zeq": 861.808114729483,
+      "keq": 0.0056601137119324805,
+      "thetaeq": 1.6081797150477986,
+      "thetarseq": 0.8016167843696593
+    },
+    "Omega_m_h2": 0.03608763501,
+    "Omega_c_h2": 0.01371763501,
+    "outputs": {
+      "cmb_cls": "cmb_cls_tip_report_bestfit.csv",
+      "matter_power": "matter_power_tip_report_bestfit.csv",
+      "fsigma8": "fsigma8_tip_report_bestfit.csv",
+      "bao_distances": "bao_distances_tip_report_bestfit.csv",
+      "background": "background_tip_report_bestfit.csv"
+    },
+    "effective_w_summary": {
+      "w_min": -0.46012329218056536,
+      "w_max": 0.33031792140620087,
+      "rho_de_eff_min": 0.9159079999999998,
+      "rho_de_eff_at_a1": 0.9159079999999998
+    }
+  },
+  {
+    "code": "CAMB",
+    "camb_version": "1.6.6",
+    "implementation": "lcdm",
+    "mapping_warning": "Standard flat LCDM baseline.",
+    "config": {
+      "name": "lcdm_report_baseline",
+      "kind": "lcdm",
+      "H0": 67.218,
+      "Omega_m": 0.275,
+      "ombh2": 0.02237,
+      "tau": 0.0544,
+      "As": 2.1e-09,
+      "ns": 0.965,
+      "sigma8_norm_for_tables": 0.811,
+      "n0": 0.0,
+      "zt": 1.0,
+      "beta": 6.0,
+      "Omega_r_for_tip_background": 9.2e-05,
+      "lmax": 800,
+      "kmax": 2.0,
+      "npoints_pk": 220,
+      "amin_w_table": 1e-05,
+      "n_w_table": 500,
+      "lens_potential_accuracy": 0
+    },
+    "derived": {
+      "age": 14.34073165990208,
+      "zstar": 1088.3070964534738,
+      "rstar": 149.3936068047822,
+      "thetastar": 1.0200520438162006,
+      "DAstar": 14.64568476779611,
+      "zdrag": 1058.602960609551,
+      "rdrag": 152.17207976508266,
+      "kd": 0.1356183846616632,
+      "thetad": 0.15816909265302131,
+      "zeq": 2969.7059486918342,
+      "keq": 0.009063405316251839,
+      "thetaeq": 0.8826287620820051,
+      "thetarseq": 0.4848308996683375
+    },
+    "Omega_m_h2": 0.12425213691000002,
+    "Omega_c_h2": 0.10188213691000002,
+    "outputs": {
+      "cmb_cls": "cmb_cls_lcdm_report_baseline.csv",
+      "matter_power": "matter_power_lcdm_report_baseline.csv",
+      "fsigma8": "fsigma8_lcdm_report_baseline.csv",
+      "bao_distances": "bao_distances_lcdm_report_baseline.csv",
+      "background": "background_lcdm_report_baseline.csv"
+    }
+  }
+]

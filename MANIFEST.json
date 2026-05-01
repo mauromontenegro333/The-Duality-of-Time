@@ -1,0 +1,146 @@
+[
+  {
+    "path": ".github/workflows/boltzmann-smoke-test.yml",
+    "bytes": 889
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 398
+  },
+  {
+    "path": "README.md",
+    "bytes": 3057
+  },
+  {
+    "path": "REPOSITORY_PLACEMENT.md",
+    "bytes": 1487
+  },
+  {
+    "path": "RESULT_SUMMARY.md",
+    "bytes": 1708
+  },
+  {
+    "path": "configs/lcdm_report_baseline.json",
+    "bytes": 404
+  },
+  {
+    "path": "configs/tip_report_bestfit.json",
+    "bytes": 422
+  },
+  {
+    "path": "figures/E_z.png",
+    "bytes": 68846
+  },
+  {
+    "path": "figures/bao_distance_ratios.png",
+    "bytes": 110817
+  },
+  {
+    "path": "figures/cmb_EE_raw_cl.png",
+    "bytes": 91229
+  },
+  {
+    "path": "figures/cmb_TE_raw_cl.png",
+    "bytes": 48971
+  },
+  {
+    "path": "figures/cmb_TT_raw_cl.png",
+    "bytes": 74607
+  },
+  {
+    "path": "figures/cmb_lensing_phiphi_raw_cl.png",
+    "bytes": 80205
+  },
+  {
+    "path": "figures/fsigma8.png",
+    "bytes": 55582
+  },
+  {
+    "path": "figures/matter_power_z0.png",
+    "bytes": 89326
+  },
+  {
+    "path": "figures/q_z.png",
+    "bytes": 67584
+  },
+  {
+    "path": "paper/boltzmann_implementation_section.template.tex",
+    "bytes": 2498
+  },
+  {
+    "path": "paper/boltzmann_implementation_section.tex",
+    "bytes": 2469
+  },
+  {
+    "path": "paper/main-2_with_boltzmann_insert.tex",
+    "bytes": 99649
+  },
+  {
+    "path": "requirements.txt",
+    "bytes": 64
+  },
+  {
+    "path": "results/background_lcdm_report_baseline.csv",
+    "bytes": 31611
+  },
+  {
+    "path": "results/background_tip_report_bestfit.csv",
+    "bytes": 31547
+  },
+  {
+    "path": "results/bao_distances_lcdm_report_baseline.csv",
+    "bytes": 1162
+  },
+  {
+    "path": "results/bao_distances_tip_report_bestfit.csv",
+    "bytes": 1168
+  },
+  {
+    "path": "results/cmb_cls_lcdm_report_baseline.csv",
+    "bytes": 177772
+  },
+  {
+    "path": "results/cmb_cls_tip_report_bestfit.csv",
+    "bytes": 176286
+  },
+  {
+    "path": "results/derived_lcdm_report_baseline.json",
+    "bytes": 1412
+  },
+  {
+    "path": "results/derived_tip_report_bestfit.json",
+    "bytes": 1729
+  },
+  {
+    "path": "results/effective_w_table_tip_report_bestfit.csv",
+    "bytes": 59348
+  },
+  {
+    "path": "results/fsigma8_lcdm_report_baseline.csv",
+    "bytes": 404
+  },
+  {
+    "path": "results/fsigma8_tip_report_bestfit.csv",
+    "bytes": 433
+  },
+  {
+    "path": "results/matter_power_lcdm_report_baseline.csv",
+    "bytes": 28940
+  },
+  {
+    "path": "results/matter_power_tip_report_bestfit.csv",
+    "bytes": 30595
+  },
+  {
+    "path": "results/run_summary.json",
+    "bytes": 3363
+  },
+  {
+    "path": "tip_boltzmann/plot_results.py",
+    "bytes": 5028
+  },
+  {
+    "path": "tip_boltzmann/run_tip_camb.py",
+    "bytes": 10388
+  }
+]
