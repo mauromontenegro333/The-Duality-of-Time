@@ -1,0 +1,14 @@
+tracer,z,observable,value,sigma,corr_group,corr_with
+BGS,0.295,DV_over_rd,7.942,0.075,,
+LRG1,0.510,DM_over_rd,13.588,0.167,LRG1,DH_over_rd
+LRG1,0.510,DH_over_rd,21.863,0.425,LRG1,DM_over_rd
+LRG2,0.706,DM_over_rd,17.351,0.177,LRG2,DH_over_rd
+LRG2,0.706,DH_over_rd,19.455,0.330,LRG2,DM_over_rd
+LRG3_ELG1,0.934,DM_over_rd,21.576,0.152,LRG3_ELG1,DH_over_rd
+LRG3_ELG1,0.934,DH_over_rd,17.641,0.193,LRG3_ELG1,DM_over_rd
+ELG2,1.321,DM_over_rd,27.601,0.318,ELG2,DH_over_rd
+ELG2,1.321,DH_over_rd,14.176,0.221,ELG2,DM_over_rd
+QSO,1.484,DM_over_rd,30.512,0.760,QSO,DH_over_rd
+QSO,1.484,DH_over_rd,12.817,0.516,QSO,DM_over_rd
+LYA,2.330,DM_over_rd,38.988,0.531,LYA,DH_over_rd
+LYA,2.330,DH_over_rd,8.632,0.101,LYA,DM_over_rd

@@ -1,0 +1,6 @@
+{
+  "z_star": 1090.0,
+  "ell_A_target": 301.0,
+  "ell_A_sigma": 3.0,
+  "description": "Broad acoustic-scale diagnostic, not a Planck likelihood. The target follows the manuscript's Planck-like acoustic-scale discussion. Use full Planck/ACT/CMB likelihoods in the later Boltzmann phase."
+}

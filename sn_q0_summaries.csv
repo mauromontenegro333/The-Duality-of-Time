@@ -1,0 +1,6 @@
+source,Omega_m,Omega_m_sigma,w0,w0_sigma,wa,wa_sigma,q0,q0_sigma,corrected
+BAO_CMB,0.352,0.021,-0.430,0.207,-1.704,0.580,0.075,0.215,no
+BAO_CMB_Pantheon_plus,0.311,0.006,-0.838,0.054,-0.612,0.201,-0.366,0.061,no
+BAO_CMB_Pantheon_plus_corrected,0.353,0.006,-0.447,0.059,-1.585,0.227,0.065,0.060,yes
+BAO_CMB_DES5Y,0.319,0.006,-0.754,0.056,-0.848,0.217,-0.271,0.061,no
+BAO_CMB_DES5Y_corrected,0.363,0.006,-0.337,0.062,-1.902,0.246,0.178,0.061,yes

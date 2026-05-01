@@ -1,0 +1,72 @@
+{
+  "best_fit_source": "Stable low-evaluation search in the attached repository. Boltzmann/CMB spectra intentionally deferred.",
+  "data_note": "Benchmark only: DESI DR2 rows are transcribed from the manuscript and treated with block-diagonal within-bin covariances. The CMB term is a broad acoustic-scale proxy. SN information is used only as q0 summary constraints. This is not a public official likelihood run.",
+  "lcdm": {
+    "AIC_bao_cmb": 23.89399889040071,
+    "AIC_with_age_q0": 297.34354779417066,
+    "BIC_bao_cmb": 25.811170879246482,
+    "BIC_with_age_q0": 299.4676983974773,
+    "best_fit": {
+      "H0": 67.21838157375264,
+      "omega_m": 0.27532499947352035,
+      "omega_r": 9.2e-05,
+      "rd": 153.55090780768253
+    },
+    "chi2_bao_cmb": {
+      "bao": 17.791894008583583,
+      "cmb_proxy": 0.10210488181712571,
+      "q0_summary": 0.0,
+      "total": 17.89399889040071
+    },
+    "chi2_with_sn_age_corrected_q0": {
+      "bao": 17.791894008583583,
+      "cmb_proxy": 0.10210488181712571,
+      "q0_summary": 273.44954890376994,
+      "total": 291.34354779417066
+    },
+    "chi2_with_sn_uncorrected_q0": {
+      "bao": 17.791894008583583,
+      "cmb_proxy": 0.10210488181712571,
+      "q0_summary": 38.686547559574215,
+      "total": 56.580546449974925
+    },
+    "ell_A_proxy": 300.0413843646413,
+    "q0": -0.5867840318293056
+  },
+  "tip": {
+    "AIC_bao_cmb": 58.76532903704992,
+    "AIC_with_age_q0": 76.21125659525308,
+    "BIC_bao_cmb": 62.59967301474147,
+    "BIC_with_age_q0": 80.45955780186634,
+    "best_fit": {
+      "H0": 65.54483953675593,
+      "beta": 11.604,
+      "n0": 0.5930802540673863,
+      "omega_m": 0.08383930483780594,
+      "omega_r": 9.2e-05,
+      "rd": 142.90682674871198,
+      "zt": 1.8415239471456921
+    },
+    "chi2_bao_cmb": {
+      "bao": 16.869396232541174,
+      "cmb_proxy": 29.89593280450875,
+      "q0_summary": 0.0,
+      "total": 46.76532903704992
+    },
+    "chi2_with_sn_age_corrected_q0": {
+      "bao": 16.869396232541174,
+      "cmb_proxy": 29.89593280450875,
+      "q0_summary": 17.445927558203152,
+      "total": 64.21125659525308
+    },
+    "chi2_with_sn_uncorrected_q0": {
+      "bao": 16.869396232541174,
+      "cmb_proxy": 29.89593280450875,
+      "q0_summary": 36.44613772807068,
+      "total": 83.2114667651206
+    },
+    "diagnostic_chain_acceptance": 0.22,
+    "ell_A_proxy": 284.5968480089777,
+    "q0": -0.05810023186823787
+  }
+}

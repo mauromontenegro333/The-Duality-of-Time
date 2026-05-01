@@ -1,0 +1,7 @@
+{
+  "model": "transition_clock",
+  "use_cmb_proxy": true,
+  "sn_q0_mode": "corrected_combined",
+  "boltzmann": false,
+  "note": "This config reproduces the compact benchmark only. Use official covariance files and CMB likelihoods in the later Boltzmann phase."
+}
